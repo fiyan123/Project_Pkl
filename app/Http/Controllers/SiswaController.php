@@ -15,6 +15,10 @@ class SiswaController extends Controller
      */
     public function index()
     {
+        // memanggil data kelas bersama dengan data siswa
+        // yang dibuat dari method 'siswa' di model 'kelas'
+        $siswa = Siswa::with('kelas')->get();
+
         $siswa = Siswa::all();
         // dd($guru);
         // return $guru;

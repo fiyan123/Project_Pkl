@@ -12,17 +12,11 @@ class Siswa extends Model
     public $timestamps = true;
 
     // membuat relasi one to one di model
-    public function siswa()
+    public function kelas()
     {
         // data dari model 'Siswa' bisa dimiliki
         // oleh model 'kelas' melalui 'id_kelas'
-        return $this->belongsTo(Kelas::class, 'id_kelas');
+        return $this->hasMany(Kelas::class, 'id_kelas');
     }
 
-    public function kelas()
-    {
-        // data dari model 'Kelas' bisa memiliki 1 data
-        // dari model 'siswa' melalui id_kelas
-        return $this->hasOne(Kelas::class, 'id_kelas');
-    }
 }

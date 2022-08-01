@@ -17,7 +17,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ url('/admin') }}"><b>" PANS "</b></a>
+    <a href="{{ url('/admin') }}"><strong style="font-family: 'Times New Roman', Times, serif">" PANS "</strong></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

@@ -21,21 +21,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes(['register' => false]);
+
 
 Route::get('/admin',function(){
     return view('layouts.admin');
+});
+
+Route::get('/guru',function(){
+    return view('layouts.guru');
 });
 
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
-//     Route::get('/', function () {
-//         return view('admin.index');
-//     });
+// Route Admin Backand
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
 Route::resource('guru', GuruController::class);
 Route::resource('siswa', SiswaController::class);
 Route::resource('kelas', KelasController::class);
 Route::resource('utama', UtamaController::class);
+
+    });

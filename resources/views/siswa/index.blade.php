@@ -7,7 +7,7 @@
                 <div class="card border-secondary">
                     <div class="card-header">
                         Data Siswa
-                        <a href="{{ route('siswa.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                        <a href="{{ route('siswa.create') }}" class="btn btn-sm btn-outline-primary" style="float: right">
                             Tambah Data
                         </a>
                     </div>
@@ -34,8 +34,8 @@
                                             <td>{{ $data->nis }}</td>
                                             <td>{{ $data->nama }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
-                                            {{-- <td>{{ $data->id_kelas->kelas }}</td> --}}
-                                            {{-- <td>{{ $data->id_kelas->jurusan }}</td> --}}
+                                            <td>{{ $data->id_kelas->kelas }}</td>
+                                            <td>{{ $data->id_kelas->jurusan }}</td>
                                             <td>
                                                 <form action="{{ route('siswa.destroy', $data->id) }}" method="post">
                                                     @csrf
