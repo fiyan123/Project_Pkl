@@ -54,9 +54,8 @@
                                     </span>
                                 @enderror
                             </div>
-                           
                             <div class="mb-3">
-                                <label class="form-label">KELAS</label>
+                                <label class="form-label">Pilih Data Siswa</label>
                                 <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror"
                                     id="">
                                     @foreach ($kelas as $data)
@@ -69,21 +68,7 @@
                                     </span>
                                 @enderror
                             </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">JURUSAN</label>
-                                <select name="id_kelas1" class="form-control @error('id_kelas1') is-invalid @enderror"
-                                    id="">
-                                    @foreach ($kelas as $data)
-                                        <option value="{{ $data->id }}">{{ $data->jurusan }}</option>
-                                    @endforeach
-                                </select>
-                                @error('id_kelas')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-success" type="submit">Simpan</button>

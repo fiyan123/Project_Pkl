@@ -16,7 +16,13 @@ class Siswa extends Model
     {
         // data dari model 'Siswa' bisa dimiliki
         // oleh model 'kelas' melalui 'id_kelas'
-        return $this->hasMany(Kelas::class, 'id_kelas');
+        return $this->belongsTo(Kelas::class, 'id_kelas');
+    }
+    public function siswa()
+    {
+        // data dari model 'Siswa' bisa dimiliki
+        // oleh model 'kelas' melalui 'id_kelas'
+        return $this->hasmany(Siswa::class, 'id_siswa');
     }
 
 }

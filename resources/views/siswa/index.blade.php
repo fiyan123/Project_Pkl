@@ -22,7 +22,6 @@
                                         <th>NAMA</th>
                                         <th>JENIS KELAMIN</th>
                                         <th>KELAS</th>
-                                        <th>JURUSAN</th>
                                         <th>AKSI</th>
                                     </tr>
                                 </thead>
@@ -34,8 +33,7 @@
                                             <td>{{ $data->nis }}</td>
                                             <td>{{ $data->nama }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
-                                            <td>{{ $data->id_kelas->kelas }}</td>
-                                            <td>{{ $data->id_kelas->jurusan }}</td>
+                                            <td>{{ $data->kelas }}</td>
                                             <td>
                                                 <form action="{{ route('siswa.destroy', $data->id) }}" method="post">
                                                     @csrf
