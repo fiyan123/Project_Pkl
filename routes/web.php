@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 
-Auth::routes(['register' => false]);
+// Auth::routes(['register' => false]);
 
 
 Route::get('/admin',function(){
@@ -33,7 +33,8 @@ Route::get('/guru',function(){
     return view('layouts.guru');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes();
+// Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -28,7 +28,7 @@
       <img src="https://smpn9baubau.com//assets/dist/img/AdminLTELogo.png" alt="logo" width="150px">
     </div>
     <br>
-      <form action="" method="post">
+      <form action="{{route('login')}}" method="post">
         @csrf
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">

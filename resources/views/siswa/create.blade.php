@@ -72,7 +72,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label">JURUSAN</label>
-                                <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror"
+                                <select name="id_kelas1" class="form-control @error('id_kelas1') is-invalid @enderror"
                                     id="">
                                     @foreach ($kelas as $data)
                                         <option value="{{ $data->id }}">{{ $data->jurusan }}</option>
