@@ -82,7 +82,7 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-<div>
+<div align="center">
   <footer class="main-footer">
     <strong>Copyright &copy; 2022 <a href="#">Penilaian Akademik Nilai Siswa</a>.</strong>
   </footer>

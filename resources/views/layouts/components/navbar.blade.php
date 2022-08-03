@@ -8,13 +8,13 @@
         <a href="{{ route('utama.index') }}" class="nav-link">Beranda</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('guru.index') }}" class="nav-link">Tambah Guru</a>
+        <a href="{{ route('guru.index') }}" class="nav-link">Data Guru</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('siswa.index') }}" class="nav-link">Tambah Siswa</a>
+        <a href="{{ route('siswa.index') }}" class="nav-link">Data Siswa</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('kelas.index') }}" class="nav-link">Tambah Kelas</a>
+        <a href="{{ route('kelas.index') }}" class="nav-link">Data Kelas</a>
       </li>
     </ul>
 

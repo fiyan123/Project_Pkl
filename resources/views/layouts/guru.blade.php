@@ -28,7 +28,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-            @include('layouts.components.sidebar1')
+            @include('layouts.components_guru.sidebar1')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -38,7 +38,7 @@
            
 
                 <!-- Topbar -->
-                    @include('layouts.components.navbar1')
+                    @include('layouts.components_guru.navbar1')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -56,12 +56,15 @@
                   
                         <div class="row">
                            
-                               
+                            <section class="content" class="d-sm-flex">
+                                <div class="container-fluid">
                                   <!-- Info boxes -->
-                                  @yield('content1')
-                                  <!-- /.row -->
+                                  @yield('content')
+                                  
+                                    </div>
+                            </section>
                            
-                                            
+                                                
 {{-- 
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -399,7 +402,13 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
+    <section class="content">
+        <div class="container-fluid">
+          <!-- Info boxes -->
+          @yield('content')
+          
+            </div>
+    </section>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>

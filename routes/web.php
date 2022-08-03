@@ -33,6 +33,10 @@ Route::get('/guru',function(){
     return view('layouts.guru');
 });
 
+Route::get('/siswa',function(){
+    return view('layouts.siswa');
+});
+
 Auth::routes();
 // Auth::routes(['register' => false]);
 
@@ -49,3 +53,14 @@ Route::resource('kelas', KelasController::class);
 Route::resource('utama', UtamaController::class);
 
     });
+
+// route admin
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
+    Route::get('/', [AdminController::class, 'getData']);
+    // tambah disini
+});
+
+Route::group(['prefix' => 'guru_user', 'middleware' => ['auth', 'role:guru_user']], function () {
+    Route::get('/guru', [UserguruController::class, 'getData']);
+    // tambah disini
+});
