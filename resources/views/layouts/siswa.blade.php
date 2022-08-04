@@ -33,7 +33,6 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">Mempermudah Para Pelajar Dalam Pengaksesan Nilai Yang Lebih Praktis,Mudah Dan Mempermudah Siswa Untuk Melihat Nilai Lebih Cepat</p>
-                        <a class="btn btn-info btn-xl" href="#about">Cek Nilai Anda</a>
                     </div>
                 </div>
             </div>

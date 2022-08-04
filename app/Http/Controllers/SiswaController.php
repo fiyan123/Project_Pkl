@@ -28,10 +28,10 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        $siswa = Siswa::all();
+        $kelas = Kelas::all();
         // dd($guru);
         // return $guru;
-        return view('siswa.create', compact('siswa'));
+        return view('siswa.create', compact('kelas'));
     }
 
     /**
@@ -99,7 +99,7 @@ class SiswaController extends Controller
             'jenis_kelamin' => 'required',
             'id_kelas'      => 'required',
         ]);
-
+ $siswa  = Siswa::findOrFail($id);
         $siswa->nis           = $request->nis;
         $siswa->nama          = $request->nama;
         $siswa->jenis_kelamin = $request->jenis_kelamin;

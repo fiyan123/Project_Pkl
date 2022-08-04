@@ -15,13 +15,14 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table align-middle" id="dataTable">
-                                <thead>
+                                <thead class="table-dark">
                                     <tr>
                                         <th>NO</th>
                                         <th>NISN</th>
                                         <th>NAMA</th>
                                         <th>JENIS KELAMIN</th>
                                         <th>KELAS</th>
+                                        <th>JURUSAN</th>
                                         <th>AKSI</th>
                                     </tr>
                                 </thead>
@@ -33,18 +34,19 @@
                                             <td>{{ $data->nis }}</td>
                                             <td>{{ $data->nama }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
-                                            <td>{{ $data->kelas }}</td>
+                                            <td>{{ $data->kelas->kelas }}</td>
+                                            <td>{{ $data->kelas->jurusan }}</td>
                                             <td>
                                                 <form action="{{ route('siswa.destroy', $data->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <a href="{{ route('siswa.edit', $data->id) }}"
                                                         class="btn btn-sm btn-outline-success">
-                                                        Edit
+                                                        Ubah
                                                     </a> |
                                                     <a href="{{ route('siswa.show', $data->id) }}"
-                                                        class="btn btn-sm btn-outline-warning">
-                                                        Show
+                                                        class="btn btn-sm btn-outline-info">
+                                                        Lihat
                                                     </a> |
                                                     <button type="submit" class="btn btn-sm btn-outline-danger"
                                                         onclick="return confirm('Apakah Anda Yakin?')">Delete

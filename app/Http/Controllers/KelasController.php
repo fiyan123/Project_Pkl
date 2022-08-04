@@ -92,6 +92,7 @@ class KelasController extends Controller
         $validated = $request->validate([
             'kelas'   => 'required',
             'jurusan' => 'required',
+            
         ]);
 
         $kelas = Kelas::findOrFail($id);

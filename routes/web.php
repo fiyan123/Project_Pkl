@@ -5,6 +5,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\UtamaController;
+// use App\Http\Controllers\UtamaguruController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::get('/siswa',function(){
 });
 
 Auth::routes();
-// Auth::routes(['register' => false]);
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -53,6 +54,14 @@ Route::resource('kelas', KelasController::class);
 Route::resource('utama', UtamaController::class);
 
     });
+
+// Route::group(['prefix' => 'guru', 'middleware' => ['auth']], function () {
+//     Route::get('/', function () {
+//         return view('guru.index');
+//     });
+
+
+//     });
 
 // route admin
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
