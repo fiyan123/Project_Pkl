@@ -7,7 +7,7 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                        Data Guru
+                        Data Dari Guru
                     </div>
                     <div class="card-body">
                         <form action="{{ route('guru.update', $guru->id) }}" method="post">

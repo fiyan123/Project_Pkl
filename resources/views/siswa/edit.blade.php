@@ -7,7 +7,7 @@
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
-                        Data Siswa
+                        Data Dari Siswa
                     </div>
                     <div class="card-body">
                         <form action="{{ route('siswa.update', $siswa->id) }}" method="post" enctype="multipart/form-data">
@@ -60,16 +60,34 @@
                             
                             <div class="mb-3">
                                 <label class="form-label">Pilih Data Kelas</label>
-                                <select name="id_siswa" class="form-control @error('id_siswa') is-invalid @enderror"
+                                <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror"
                                     readonly>
-                                    @foreach ($siswa as $data)
+                                    @foreach ($kelas as $data)
                                         <option value="{{ $data->id }}"
-                                            {{ $data->id == $kelas->id_kelas ? 'selected' : '' }}>
+                                            {{ $data->id == $siswa->id_kelas ? 'selected' : '' }}>
                                             {{ $data->kelas}}
                                         </option>
                                     @endforeach
                                 </select>
-                                @error('id_siswa')
+                                @error('id_kelas')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Pilih Data Jurusan</label>
+                                <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror"
+                                    readonly>
+                                    @foreach ($kelas as $data)
+                                        <option value="{{ $data->id }}"
+                                            {{ $data->id == $siswa->id_kelas ? 'selected' : '' }}>
+                                            {{ $data->jurusan}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('id_kelas')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -77,7 +95,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Save</button>
+                                    <button class="btn btn-success" type="submit">Simpan</button>
                                 </div>
                             </div>
                         </form>

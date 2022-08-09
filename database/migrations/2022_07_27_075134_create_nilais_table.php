@@ -24,8 +24,7 @@ class CreateNilaisTable extends Migration
             $table->integer('raport');
             $table->string('nilai_grade');
 
-
-             // foreign key
+            // foreign key
             $table->foreign('id_guru')->references('id')->on('gurus')->onDelete('cascade');
             $table->foreign('id_siswa')->references('id')->on('siswas')->onDelete('cascade');
             $table->timestamps();

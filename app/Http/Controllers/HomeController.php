@@ -25,6 +25,9 @@ class HomeController extends Controller
         if (Laratrust::hasRole('member')) {
             return $this->memberDashboard();
         }
+        if (Laratrust::hasRole('guru')) {
+            return $this->memberDashboard();
+        }
 
         return view('home');
     }

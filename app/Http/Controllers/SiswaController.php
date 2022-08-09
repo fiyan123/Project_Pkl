@@ -80,7 +80,8 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa  = Siswa::findOrFail($id);
-        return view('siswa.edit', compact('siswa'));
+        $kelas  = Kelas::all();
+        return view('siswa.edit', compact('siswa','kelas'));
     }
 
     /**

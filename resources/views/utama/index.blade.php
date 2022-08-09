@@ -17,7 +17,7 @@
                 font-family: 'Times New Roman', Times, serif;
                 font-weight: bold;
                 font-size: 30pt;
-                color: black;
+              
                 
               
               
@@ -25,7 +25,7 @@
         h5{
             font-family: 'Times New Roman', Times, serif;
             font-weight: bold;
-            color: #000;
+          
         }
 
         img{
@@ -43,19 +43,19 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://img.freepik.com/free-photo/education-day-assortment-with-copy-space_23-2148721275.jpg?w=2000" class="d-block w-100" alt="...">
+            <img src="https://assets.pikiran-rakyat.com/crop/28x137:1912x1347/x/photo/2022/07/07/4246544706.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang Di Website "PANS"</h3>
               <h5>Mendidik Para Pelajar Agar Menjadi Pelajar Yang Ungul Dan Berdaya Saing Tinggi <br> Menjadikan Pelajar Yang Cerdas Dan Berkreatifitas</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://sg.cdnki.com/terangkan-hubungan-antara-pencapaian-pendidikan-yang-berkualitas-dengan-penerapan-manajemen-sekolah---aHR0cHM6Ly93cWEuY28uaWQvd3AtY29udGVudC91cGxvYWRzLzIwMTcvMDQvcmV2YW1wMS5qcGc=.webp" class="d-block w-100" alt="...">
+            <img src="https://foto.data.kemdikbud.go.id/getImage/20266886/1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://d363dj0znn9oly.cloudfront.net/wp-content/uploads/2021/07/COVER-kelola-keuangan-anak-1.jpg" class="d-block w-100" alt="...">
+            <img src="https://foto.data.kemdikbud.go.id/getImage/20247305/4.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>

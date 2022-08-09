@@ -4,9 +4,9 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#about">Beranda</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Data Nilai Siswa</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="siswa">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('data_nilai.index') }}">Data Nilai Siswa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
             </ul>
         </div>
     </div>

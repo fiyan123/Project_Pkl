@@ -40,12 +40,13 @@
 
         <!-- About-->
         <section class="page-section bg-dark" id="about">
+            @yield('content')
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">Tentang Website Kami</h2>
                         <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+                        <p class="text-white-75 mb-4">"Fokuslah menjadi produktif, bukan sekadar sibuk saja." (Tim Ferris) <br> "Pendidikan bukan hanya pergi ke sekolah dan mendapatkan gelar. Tetapi juga soal memperluas pengetahuan dan menyerap ilmu kehidupan." (Shakuntala Devi, Penulis)</p>
                     </div>
                 </div>
             </div>

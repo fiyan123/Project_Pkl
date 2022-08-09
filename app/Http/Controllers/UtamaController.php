@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Utama;
-
 class UtamaController extends Controller
 {
     /**
@@ -14,11 +11,10 @@ class UtamaController extends Controller
      */
     public function index()
     {
-        
+
         // dd($guru);
         // return $guru;
         return view('utama.index');
     }
 
-    
 }
