@@ -17,6 +17,7 @@ class CreateNilaisTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_guru');
             $table->unsignedBigInteger('id_siswa');
+            $table->unsignedBigInteger('id_kelas');
             $table->integer('nilai_kehadiran');
             $table->integer('nilai_harian');
             $table->integer('pas');
@@ -27,6 +28,7 @@ class CreateNilaisTable extends Migration
             // foreign key
             $table->foreign('id_guru')->references('id')->on('gurus')->onDelete('cascade');
             $table->foreign('id_siswa')->references('id')->on('siswas')->onDelete('cascade');
+            $table->foreign('id_kelas')->references('id')->on('kelas')->onDelete('cascade');
             $table->timestamps();
         });
     }

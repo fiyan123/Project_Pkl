@@ -25,6 +25,7 @@
         <!-- Masthead-->
         
         <header class="masthead">
+            @yield('content')
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
@@ -40,7 +41,6 @@
 
         <!-- About-->
         <section class="page-section bg-dark" id="about">
-            @yield('content')
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -61,7 +61,7 @@
      
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Penilain Akademik Nilai Siswa</div></div>
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Penilaian Akademik Nilai Siswa</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

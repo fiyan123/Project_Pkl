@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.guru')
 @section('content')
 
 <!doctype html>
@@ -17,13 +17,13 @@
                 font-family: 'Times New Roman', Times, serif;
                 font-weight: bold;
                 font-size: 30pt;
-              
+                color: black;
                 
               
               
         }
         h5{
-            font-family: 'Times New Roman', Times, serif;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             font-weight: bold;
           
         }
@@ -31,6 +31,9 @@
         img{
 
               border-radius: 10px;
+        }
+        body{
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
         }
     </style>
   </head>
@@ -43,14 +46,14 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://assets.pikiran-rakyat.com/crop/28x137:1912x1347/x/photo/2022/07/07/4246544706.jpg" class="d-block w-100" alt="...">
+            <img src="http://4.bp.blogspot.com/-ys_LZKeLSso/UpQZercAnaI/AAAAAAAAAGk/VpHPHcdBhns/s1600/Denah-Sekolah-MInimalis-dan-Ukurannya-Terbaru.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang Di Website "PANS"</h3>
               <h5>Mendidik Para Pelajar Agar Menjadi Pelajar Yang Ungul Dan Berdaya Saing Tinggi <br> Menjadikan Pelajar Yang Cerdas Dan Berkreatifitas</h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="https://foto.data.kemdikbud.go.id/getImage/20266886/1.jpg" class="d-block w-100" alt="...">
+            <img src="http://3.bp.blogspot.com/-Wmmj59xgSlw/U6YR27K7DVI/AAAAAAAAAms/_6xZoxMWgBk/s1600/Desain+Sekolah+Islam+Terbaru.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>

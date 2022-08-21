@@ -6,14 +6,29 @@
             <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card">
-                    <div class="card-header bg-success">
-                        Data Nilai Siswa
+                    <div class="card-header bg-primary mb-2" align="center" style="color: white">
+                        DATA DARI SISWA
                     </div>
                     <div class="card-body">
                         <form action="{{ route('data_nilai.store') }}" method="post">
                             @csrf
-                              {{-- <div class="mb-3">
-                                <label class="form-label">NISN</label>
+                              <div class="mb-3">
+                                <label class="form-label">NIP GURU</label>
+                                <select name="id_guru" class="form-control @error('id_guru') is-invalid @enderror"
+                                    id="">
+                                    @foreach ($guru as $data)
+                                        <option value="{{ $data->id }}">{{ $data->nip }}</option>
+                                    @endforeach
+                                </select>
+                                @error('id_guru')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                              <div class="mb-3">
+                                <label class="form-label">NISN SISWA</label>
                                 <select name="id_siswa" class="form-control @error('id_siswa') is-invalid @enderror"
                                     id="">
                                     @foreach ($siswa as $data)
@@ -25,15 +40,15 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div> --}}
+                            </div>
 
 
-                            {{-- <div class="mb-3">
-                                <label class="form-label">NAMA</label>
+                            <div class="mb-3">
+                                <label class="form-label">NAMA SISWA</label>
                                 <select name="id_siswa" class="form-control @error('id_siswa') is-invalid @enderror"
                                     id="">
                                     @foreach ($siswa as $data)
-                                        <option value="{{ $data->id }}">{{ $data->nis }}</option>
+                                        <option value="{{ $data->id }}">{{ $data->nama }}</option>
                                     @endforeach
                                 </select>
                                 @error('id_siswa')
@@ -41,10 +56,10 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div> --}}
+                            </div>
 
-                            {{-- <div class="mb-3">
-                                <label class="form-label">Kelas</label>
+                             <div class="mb-3">
+                                <label class="form-label">KELAS</label>
                                 <select name="id_kelas" class="form-control @error('id_kelas') is-invalid @enderror"
                                     id="">
                                     @foreach ($kelas as $data)
@@ -57,9 +72,9 @@
                                     </span>
                                 @enderror
                             </div>
-                            
+    
                             <div class="mb-3">
-                                <label class="form-label">Jurusan</label>
+                                <label class="form-label">JURUSAN</label>
                                 <select class="form-control @error('id_kelas') is-invalid @enderror"
                                     id="">
                                     @foreach ($kelas as $data)
@@ -71,7 +86,12 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div> --}}
+                            </div>
+
+                            <br>
+                            <div align="center"><h3><u>DATA NILAI SISWA</u></h3></div>
+                            <br>
+
                             <div class="mb-3">
                                 <label class="form-label">NILAI KEHADIRAN</label>
                                 <input type="number" class="form-control  @error('nilai_kehadiran') is-invalid @enderror"
@@ -117,7 +137,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-outline-success" type="submit">Simpan</button>
+                                    <button class="btn btn-info" type="submit">SIMPAN</button>
                                 </div>
                             </div>
                         </form>

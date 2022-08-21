@@ -27,11 +27,11 @@ class UsersSeeder extends Seeder
 
         ]);
 
-        $memberRole = Role::create([
-            'name' => 'member',
-            'display_name' => 'Project Member', // optional
+        // $memberRole = Role::create([
+        //     'name' => 'member',
+        //     'display_name' => 'Project Member', // optional
 
-        ]);
+        // ]);
 
         // membuat sample user
         $adminUser = new User();
@@ -48,12 +48,12 @@ class UsersSeeder extends Seeder
         $memberUser->save();
         $memberUser->attachRole($memberRole);
 
-        $memberUser = new User();
-        $memberUser->name = 'Member Project';
-        $memberUser->email = 'siswa@gmail.com'; // optional
-        $memberUser->password = bcrypt('rahasia');
-        $memberUser->save();
-        $memberUser->attachRole($memberRole);
+        // $memberUser = new User();
+        // $memberUser->name = 'Member Project';
+        // $memberUser->email = 'siswa@gmail.com'; // optional
+        // $memberUser->password = bcrypt('rahasia');
+        // $memberUser->save();
+        // $memberUser->attachRole($memberRole);
 
     }
 }

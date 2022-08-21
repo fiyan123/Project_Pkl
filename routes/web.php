@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 // Auth::routes(['register' => false]);
@@ -38,11 +38,11 @@ Route::get('/siswa', function () {
 });
 
 Route::get('/tambah_data', function () {
-    return view('data_nilai.create_nilai');
+    return view('data_nilai.create');
 });
 
 Route::get('/data_nilai', function () {
-    return view('data_nilai.index_nilai');
+    return view('data_nilai.index');
 });
 
 Auth::routes();
@@ -58,7 +58,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('guru', GuruController::class);
     Route::resource('siswa', SiswaController::class);
     Route::resource('kelas', KelasController::class);
-    Route::resource('utama', UtamaController::class);
 
 });
 
@@ -66,29 +65,30 @@ Route::group(['prefix' => 'guru', 'middleware' => ['auth']], function () {
     Route::get('/', function () {
         return view('user_guru.index');
     });
-    Route::get('/tambah_guru', function () {
-        return view('data_guru.create');
+    Route::get('/data_nilai', function () {
+        return view('data_nilai.create');
     });
     Route::get('/data_nilai', function () {
-        return view('data_guru.index');
+        return view('data_nilai.index');
     });
+    Route::resource('utama', UtamaController::class);
     Route::resource('utama_guru', UtamaguruController::class);
     Route::resource('data_nilai', NilaiController::class);
 
 });
 
-Route::group(['prefix' => 'siswa', 'middleware' => ['auth']], function () {
-    Route::get('/', function () {
-        return view('user_siswa.index');
-    });
-    Route::get('/siswa_data', function () {
-        return view('siswa_data.index');
-    });
+// Route::group(['prefix' => 'siswa', 'middleware' => ['auth']], function () {
+//     Route::get('/', function () {
+//         return view('user_siswa.index');
+//     });
+//     Route::get('/siswa_data', function () {
+//         return view('siswa_data.index');
+//     });
 
-    Route::resource('utama_guru', UtamaguruController::class);
-    Route::resource('data_nilai', NilaiController::class);
+//     Route::resource('utama_guru', UtamaguruController::class);
+//     Route::resource('data_nilai', NilaiController::class);
 
-});
+// });
 
 // Route::group(['prefix' => 'guru', 'middleware' => ['auth']], function () {
 //     Route::get('/', function () {

@@ -25,4 +25,11 @@ class Nilai extends Model
         return $this->belongsTo(Siswa::class, 'id_siswa');
     }
 
+    public function guru()
+    {
+        // data dari model 'Siswa' bisa dimiliki
+        // oleh model 'kelas' melalui 'id_kelas'
+        return $this->belongsTo(Guru::class, 'id_guru');
+    }
+
 }

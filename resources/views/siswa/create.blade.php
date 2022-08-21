@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" align="center">
                         Data Siswa
                     </div>
                     <div class="card-body">

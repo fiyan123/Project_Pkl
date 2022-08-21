@@ -42,12 +42,12 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
 
-                        <li class="nav-item hidden-sm-down">
+                        {{-- <li class="nav-item hidden-sm-down">
                             <form class="app-search ps-3">
                                 <input type="text" class="form-control" placeholder="Search for..."> <a
                                     class="srh-btn"><i class="ti-search"></i></a>
                             </form>
-                        </li>
+                        </li> --}}
                     </ul>
 
                     <!-- ============================================================== -->
@@ -59,7 +59,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ asset('assets1/images/users/1.jpg') }}" alt="user" class="profile-pic me-2">{{ Auth::user()->name }}
+                                <img src="{{ asset('assets1/images/users/1.jpg') }}" alt="user" class="profile-pic me-2">Guru Mata Pelajaran
                             </a>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                         </li>

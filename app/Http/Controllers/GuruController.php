@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Guru;
+use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
@@ -42,22 +42,22 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-         //validasi
-         $validated = $request->validate([
-            'nip'             => 'required',
-            'nama'            => 'required',
-            'jenis_kelamin'   => 'required',
-            'mata_pelajaran'  => 'required',
+        //validasi
+        $validated = $request->validate([
+            'nip' => 'required|unique:gurus',
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
+            'mata_pelajaran' => 'required',
         ]);
 
-            $guru = new Guru();
-            $guru->nip             = $request->nip;
-            $guru->nama            = $request->nama;
-            $guru->jenis_kelamin   = $request->jenis_kelamin;
-            $guru->mata_pelajaran  = $request->mata_pelajaran;
-            $guru->save();
-            return redirect()->route('guru.index')
-                ->with('success', 'Data berhasil dibuat!');
+        $guru = new Guru();
+        $guru->nip = $request->nip;
+        $guru->nama = $request->nama;
+        $guru->jenis_kelamin = $request->jenis_kelamin;
+        $guru->mata_pelajaran = $request->mata_pelajaran;
+        $guru->save();
+        return redirect()->route('guru.index')
+            ->with('success', 'Data berhasil dibuat!');
     }
 
     /**
@@ -93,18 +93,18 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-         // Validasi
-         $validated = $request->validate([
-            'nip'            => 'required',
-            'nama'           => 'required',
-            'jenis_kelamin'  => 'required',
+        // Validasi
+        $validated = $request->validate([
+            'nip' => 'required|unique:gurus',
+            'nama' => 'required',
+            'jenis_kelamin' => 'required',
             'mata_pelajaran' => 'required',
         ]);
 
         $guru = Guru::findOrFail($id);
-        $guru->nip  = $request->nip;
+        $guru->nip = $request->nip;
         $guru->nama = $request->nama;
-        $guru->jenis_kelamin  = $request->jenis_kelamin;
+        $guru->jenis_kelamin = $request->jenis_kelamin;
         $guru->mata_pelajaran = $request->mata_pelajaran;
         $guru->save();
         return redirect()->route('guru.index')

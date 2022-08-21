@@ -6,7 +6,7 @@
                         
                         
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{{ url('/utama_guru') }}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
+                                href="{{ route('utama.index') }}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Beranda</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('data_nilai.create') }}" aria-expanded="false">
