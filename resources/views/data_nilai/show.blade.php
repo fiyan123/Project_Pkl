@@ -36,7 +36,7 @@
                                 readonly>
                         </div>
 
-                         <div align="center"><h3><u>DATA NILAI SISWA</u></h3></div>
+                         <div align="center"><h5>DATA NILAI SISWA</h5></div>
                        
 
                         <div class="mb-3">
@@ -77,7 +77,7 @@
 
                         <div class="mb-3">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('data_nilai.index') }}" class="btn btn-success">Kembali</a>
+                                <a href="{{ route('data_nilai.index') }}" class="btn btn-dark">Kembali</a>
                             </div>
                         </div>
 

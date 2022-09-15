@@ -6,11 +6,8 @@
             <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" align="center">
                         Data kelas
-                    </div><br>
-                    <div align="center">
-                        <img src="https://img.lovepik.com/photo/50139/4475.jpg_wh860.jpg" alt="logo" width="400px" style="border-radius: 5px">
                     </div>
                     <div class="card-body">
                         <form action="{{ route('kelas.store') }}" method="post">
@@ -39,7 +36,8 @@
                             
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-success" type="submit">Simpan</button>
+                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                    <a href="{{ route('kelas.index') }}" class="btn btn-secondary">Kembali</a>
                                 </div>
                             </div>
                         </form>

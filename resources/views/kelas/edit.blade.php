@@ -7,7 +7,7 @@
                 @include('layouts/_flash')
 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" align="center">
                         Data Dari Kelas
                     </div>
 
@@ -39,7 +39,8 @@
     
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-success" type="submit">Simpan</button>
+                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                    <a href="{{ route('siswa.index') }}" class="btn btn-secondary">Kembali</a>
                                 </div>
                             </div>
                         </form>

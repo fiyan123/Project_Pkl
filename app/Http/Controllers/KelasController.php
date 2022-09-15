@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Kelas;
+use Illuminate\Http\Request;
 
 class KelasController extends Controller
 {
@@ -14,7 +14,7 @@ class KelasController extends Controller
      */
     public function index()
     {
-        $kelas= Kelas::all();
+        $kelas = Kelas::latest()->get();
         // dd($guru);
         // return $guru;
         return view('kelas.index', compact('kelas'));
@@ -27,7 +27,7 @@ class KelasController extends Controller
      */
     public function create()
     {
-        $kelas= Kelas::all();
+        $kelas = Kelas::all();
         // dd($guru);
         // return $guru;
         return view('kelas.create', compact('kelas'));
@@ -41,18 +41,18 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-         //validasi
-         $validated = $request->validate([
-            'kelas'   => 'required',
+        //validasi
+        $validated = $request->validate([
+            'kelas' => 'required',
             'jurusan' => 'required',
         ]);
 
-            $kelas= new Kelas();
-            $kelas->kelas   = $request->kelas;
-            $kelas->jurusan = $request->jurusan;
-            $kelas->save();
-            return redirect()->route('kelas.index')
-                ->with('success', 'Data berhasil dibuat!');
+        $kelas = new Kelas();
+        $kelas->kelas = $request->kelas;
+        $kelas->jurusan = $request->jurusan;
+        $kelas->save();
+        return redirect()->route('kelas.index')
+            ->with('success', 'Data berhasil dibuat!');
     }
 
     /**
@@ -90,13 +90,13 @@ class KelasController extends Controller
     {
         // Validasi
         $validated = $request->validate([
-            'kelas'   => 'required',
+            'kelas' => 'required',
             'jurusan' => 'required',
-            
+
         ]);
 
         $kelas = Kelas::findOrFail($id);
-        $kelas->kelas   = $request->kelas;
+        $kelas->kelas = $request->kelas;
         $kelas->jurusan = $request->jurusan;
         $kelas->save();
         return redirect()->route('kelas.index')

@@ -6,11 +6,8 @@
             <div class="col-md-12">
                 @include('layouts/_flash')
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" align="center">
                         Data Guru
-                    </div><br>
-                    <div align="center">
-                        <img src="https://media.suara.com/pictures/480x260/2019/12/24/78259-ilustrasi-guru-mengajar.jpg" alt="logo" width="400px" style="border-radius: 5px">
                     </div>
                     <div class="card-body">
                         <form action="{{ route('guru.store') }}" method="post">
@@ -69,7 +66,8 @@
                                 </div>
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-success" type="submit">Simpan</button>
+                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                    <a href="{{ route('guru.index') }}" class="btn btn-secondary">Kembali</a>
                                 </div>
                             </div>
                         </form>

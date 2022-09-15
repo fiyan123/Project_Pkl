@@ -7,39 +7,20 @@ use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $guru = Guru::all();
-        // dd($guru);
-        // return $guru;
+        $guru = Guru::latest()->get();
+
         return view('guru.index', compact('guru'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $guru = Guru::all();
-        // dd($guru);
-        // return $guru;
+
         return view('guru.create', compact('guru'));
-        Siswa::findOrfail();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //validasi
@@ -60,42 +41,25 @@ class GuruController extends Controller
             ->with('success', 'Data berhasil dibuat!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $guru = Guru::findOrFail($id);
+
         return view('guru.show', compact('guru'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $guru = Guru::findOrFail($id);
+
         return view('guru.edit', compact('guru'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         // Validasi
         $validated = $request->validate([
-            'nip' => 'required|unique:gurus',
+            'nip' => 'required',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
             'mata_pelajaran' => 'required',
@@ -111,12 +75,6 @@ class GuruController extends Controller
             ->with('success', 'Data berhasil diedit!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $guru = Guru::findOrFail($id);

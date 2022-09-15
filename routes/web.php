@@ -4,26 +4,14 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\Siswa_dataController;
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\UtamaguruController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
-
 Route::get('/', function () {
     return view('login');
 });
-
-// Auth::routes(['register' => false]);
 
 Route::get('/admin', function () {
     return view('layouts.admin');
@@ -45,6 +33,10 @@ Route::get('/data_nilai', function () {
     return view('data_nilai.index');
 });
 
+Route::get('/siswa_nilai', function () {
+    return view('siswa_nilai.index');
+});
+
 Auth::routes();
 Auth::routes(['register' => false]);
 
@@ -55,47 +47,34 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/', function () {
         return view('admin.index');
     });
+
     Route::resource('guru', GuruController::class);
     Route::resource('siswa', SiswaController::class);
     Route::resource('kelas', KelasController::class);
 
 });
 
-Route::group(['prefix' => 'guru', 'middleware' => ['auth']], function () {
+// Route Role Guru
+Route::group(['prefix' => 'data_nilai', 'middleware' => ['auth']], function () {
     Route::get('/', function () {
-        return view('user_guru.index');
-    });
-    Route::get('/data_nilai', function () {
-        return view('data_nilai.create');
-    });
-    Route::get('/data_nilai', function () {
         return view('data_nilai.index');
     });
+
     Route::resource('utama', UtamaController::class);
     Route::resource('utama_guru', UtamaguruController::class);
     Route::resource('data_nilai', NilaiController::class);
 
 });
 
-// Route::group(['prefix' => 'siswa', 'middleware' => ['auth']], function () {
-//     Route::get('/', function () {
-//         return view('user_siswa.index');
-//     });
-//     Route::get('/siswa_data', function () {
-//         return view('siswa_data.index');
-//     });
+// Route Role Siswa
+Route::group(['prefix' => 'siswa', 'middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        return view('siswa_nilai.index');
+    });
 
-//     Route::resource('utama_guru', UtamaguruController::class);
-//     Route::resource('data_nilai', NilaiController::class);
+    Route::resource('siswa_nilai', Siswa_dataController::class);
 
-// });
-
-// Route::group(['prefix' => 'guru', 'middleware' => ['auth']], function () {
-//     Route::get('/', function () {
-//         return view('guru.index');
-//     });
-
-//     });
+});
 
 // route admin
 // Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {

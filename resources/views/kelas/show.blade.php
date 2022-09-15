@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" align="center">
                         Data Dari Kelas
                     </div>
                     <div class="card-body">
@@ -22,7 +22,7 @@
 
                         <div class="mb-3">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('kelas.index') }}" class="btn btn-success" type="submit">Kembali</a>
+                                <a href="{{ route('kelas.index') }}" class="btn btn-primary" type="submit">Kembali</a>
                             </div>
                         </div>
                     </div>

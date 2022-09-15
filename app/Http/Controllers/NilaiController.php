@@ -10,17 +10,12 @@ use Illuminate\Http\Request;
 
 class NilaiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
 
-        $nilai = Nilai::all();
+        $nilai = Nilai::latest()->get();
         $kelas = Kelas::all();
-        $guru = Guru::all();
+        $guru  = Guru::all();
         $siswa = Siswa::all();
         // dd($guru);
         // return $guru;
@@ -28,29 +23,18 @@ class NilaiController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
+        $nilai = Nilai::all();
         $siswa = Siswa::all();
         $kelas = Kelas::all();
-        $guru = Guru::all();
-        $nilai = Nilai::all();
+        $guru  = Guru::all();
         // dd($guru);
         // return $guru;
         return view('data_nilai.create', compact('kelas', 'siswa', 'guru', 'nilai'));
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -94,12 +78,6 @@ class NilaiController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $nilai = Nilai::findOrFail($id);
@@ -107,12 +85,6 @@ class NilaiController extends Controller
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $nilai = Nilai::findOrFail($id);
@@ -123,13 +95,6 @@ class NilaiController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -174,12 +139,6 @@ class NilaiController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $nilai = Nilai::findOrFail($id);
