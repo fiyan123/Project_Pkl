@@ -1,12 +1,14 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <hr class="sidebar-divider my-0">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Pans | Siswa</div>
-    </a>
+    <!-- Nav Item - Dashboard -->
+    <br>
+    <div align="center">
+        <li class="nav-item active">
+            <img src="https://smpn9baubau.com//assets/dist/img/AdminLTELogo.png" alt="logo" srcset="" width="60px">
+            <p style="color: whitesmoke">Pans | Siswa</p>
+        </li>
+    </div>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -40,10 +42,10 @@
                     <i class="nav-icon fas fa-file"></i>
                     Nilai Siswa
                 </a>
-                <a class="collapse-item" href="cards.html">
+                {{-- <a class="collapse-item" href="cards.html">
                     <i class="nav-icon fas fa-bookmark"></i>
                     Tentang Sekolah
-                </a>
+                </a> --}}
             </div>
         </div>
     </li>
@@ -65,7 +67,7 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data - Data:</h6>
+                <h6 class="collapse-header">Aksi:</h6>
                 <a class="collapse-item" href="cards.html">
                     <i class="fas fa-sign-out-alt"></i>
                     Logout

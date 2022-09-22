@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Guru;
 use App\Models\Kelas;
-use App\Models\nilai;
+use App\Models\Nilai;
 use App\Models\Siswa;
 use App\Models\Siswa_data;
 use Illuminate\Http\Request;

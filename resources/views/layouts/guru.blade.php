@@ -21,7 +21,7 @@
     <style>
         body {
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-size: 10pt;
+            font-size: 11pt;
         }
         tr,label {
             color: black;

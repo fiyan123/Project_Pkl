@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             @include('layouts/_flash')
-            <div class="card border">
+            <div class="card border" style="width: 1105px">
                 <div class="card-header" align="right">
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal" data-bs-placement="bottom" title="Tambah Data Baru">

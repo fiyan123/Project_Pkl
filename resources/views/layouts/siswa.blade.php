@@ -21,8 +21,11 @@
     <link href="{{ asset('assets2/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <style>
         body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            text: black;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 11pt;
+        }
+        tr{
+            color: black;
         }
     </style>
 
