@@ -40,7 +40,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data - Data:</h6>
                 <a class="collapse-item" href="{{ route('data_nilai.index') }}">
-                    <i class="fas fa-fw fa-file"></i>
+                    <i class="fas fa-fw fa-book-open"></i>
                     Nilai Siswa
                 </a>
             </div>
@@ -59,7 +59,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-book"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>Akun</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -21,10 +20,12 @@
     <link href="{{ asset('assets2/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <style>
         body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 10pt;
         }
-        tr {
-            color: black
+        tr,label {
+            color: black;
+            font-family: Georgia, 'Times New Roman', Times, serif
         }
     </style>
 

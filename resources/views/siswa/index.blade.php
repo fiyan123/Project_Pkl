@@ -12,9 +12,13 @@
             <div class="card border">
                 <div class="card-header" align="right">
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        Tambah Data
+                        data-bs-target="#exampleModal" data-bs-placement="bottom" title="Tambah Data Baru">
+                        <i class="nav-icon fas fa-user">&nbsp;+</i>
                     </button>
+                </div>
+                
+                <div class="card-header" align="center">
+                    <h5>Data Table Siswa</h5>
                 </div>
 
                 <div class="card-body">

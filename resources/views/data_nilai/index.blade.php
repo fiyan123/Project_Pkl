@@ -12,8 +12,8 @@
             <div class="card border">
                 <div class="card-header" align="right">
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        Tambah Data
+                        data-bs-target="#exampleModal" data-bs-placement="bottom" title="Tambah Data Baru">
+                        <i class="nav-icon fas fa-user">&nbsp;+</i>
                     </button>
                 </div>
                 <div class="card-body">
@@ -90,7 +90,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Tambah Data Baru</h4>
+                <h4 class="modal-title" id="exampleModalLabel" style="color: black">Tambah Data Baru</h4>
             </div>
 
             <div class="modal-body">
@@ -169,7 +169,7 @@
 
                     <br>
                     <div align="left">
-                        <h4>Data Nilai Siswa</h4>
+                        <h4 style="color: black">Data Nilai Siswa</h4>
                     </div>
                     <hr>
 
@@ -216,7 +216,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Batal</button>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>

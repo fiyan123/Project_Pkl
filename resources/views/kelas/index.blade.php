@@ -12,9 +12,13 @@
             <div class="card border-secondary">
                 <div class="card-header" align="right">
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        Tambah Data
+                        data-bs-target="#exampleModal" data-bs-placement="bottom" title="Tambah Data Baru">
+                        <i class="nav-icon fas fa-user">&nbsp;+</i>
                     </button>
+                </div>
+                
+                <div class="card-header" align="center">
+                    <h5>Data Table Kelas</h5>
                 </div>
 
                 <div class="card-body">
@@ -39,22 +43,49 @@
                                         <form action="{{ route('kelas.destroy', $data->id) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ route('kelas.edit', $data->id) }}"
-                                                class="btn btn-sm btn-outline-success">
+                                            <a href="{{ route('kelas.edit', $data->id) }}" class="btn btn-sm btn-outline-success">
                                                 <i class="nav-icon fas fa-user"></i>
                                                 Ubah
                                             </a> |
-                                            <a href="{{ route('kelas.show', $data->id) }}"
-                                                class="btn btn-sm btn-outline-info">
+                                            <a href="{{ route('kelas.show', $data->id) }}" class="btn btn-sm btn-outline-info">
                                                 <i class="nav-icon fas fa-eye"></i>
                                                 Lihat
-                                            </a> |
-                                            <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                onclick="return confirm('Apakah Anda Yakin?')">
-                                                <i class="nav-icon fas fa-cut"></i>
-                                                Hapus
-                                            </button>
+                                            </a>
                                         </form>
+
+                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#ModalDelete">
+                                            <i class="nav-icon fas fa-cut"></i>
+                                            Hapus
+                                        </button>
+                                    
+                                        <!-- Modal Delete-->
+                                        <div class="modal fade" id="ModalDelete" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h6 class="modal-title" id="exampleModalLabel">
+                                                            Apakah Anda Yakin?
+                                                        </h6>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <input type="checkbox" id="check" onclick="enable()">&nbsp; Ya, Hapus Data Ini
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                        <form action="{{ route('kelas.destroy', $data->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="btnHapus" disabled="true">Hapus</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Akhir Delete --}}
                                     </td>
                                 </tr>
                                 @endforeach
@@ -68,7 +99,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal Create Data -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -81,7 +112,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Kelas</label>
-                        <input type="text" class="form-control  @error('kelas') is-invalid @enderror" name="kelas">
+                        <input type="text" class="form-control  @error('kelas') is-invalid @enderror" name="kelas" id="kelas">
                         @error('kelas')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -91,7 +122,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">Jurusan</label>
-                        <input type="text" class="form-control  @error('jurusan') is-invalid @enderror" name="jurusan">
+                        <input type="text" class="form-control  @error('jurusan') is-invalid @enderror" name="jurusan" id="jurusan">
                         @error('jurusan')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -100,12 +131,45 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> --}}
+                        <button type="submit" class="btn btn-primary" id="simpan" disabled>Simpan</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+{{-- Script Button --}}
+<Script>
+        const simpanButton = document.getElementById("simpan");
+        const kelasButton = document.getElementById("kelas");
+
+        kelas.addEventListener("keyup", (e) => {
+            const value = e.currentTarget.value;
+
+                if (value === "") {
+                    simpanButton.disabled = true;
+                } 
+                
+                else {
+                    simpanButton.disabled = false;
+                }
+        });
+
+        function enable(){
+            var check = document.getElementById('check');
+            var btnHapus = document.getElementById('btnHapus');
+
+                if (check.checked) {
+                    btnHapus.removeAttribute("disabled");
+                }   
+                else {
+                    btnHapus.disabled = "true";
+                }
+        };
+
+
+</Script>
 @endsection

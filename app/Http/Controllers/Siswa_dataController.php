@@ -18,13 +18,13 @@ class Siswa_dataController extends Controller
      */
     public function index()
     {
-        $siswa_data = Siswa_data::all();
+
+        $nilai = Nilai::all();
         $siswa = Siswa::all();
         $kelas = Kelas::all();
-        $nilai = Nilai::all();
         $guru = Guru::all();
 
-        return view('siswa_nilai.index', compact('siswa_data', 'siswa', 'kelas', 'nilai', 'guru'));
+        return view('siswa_nilai.index', compact('siswa', 'kelas', 'nilai', 'guru'));
     }
 
     /**

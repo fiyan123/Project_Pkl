@@ -36,8 +36,14 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data - Data:</h6>
-                <a class="collapse-item" href="buttons.html">Nilai Siswa</a>
-                <a class="collapse-item" href="cards.html">Tentang Sekolah</a>
+                <a class="collapse-item" href="{{ route('siswa_nilai.index') }}">
+                    <i class="nav-icon fas fa-file"></i>
+                    Nilai Siswa
+                </a>
+                <a class="collapse-item" href="cards.html">
+                    <i class="nav-icon fas fa-bookmark"></i>
+                    Tentang Sekolah
+                </a>
             </div>
         </div>
     </li>

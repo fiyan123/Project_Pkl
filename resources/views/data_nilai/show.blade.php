@@ -71,7 +71,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">GRADE</label>
-                            <input type="text" class="form-control" name="nilai_grade" value="{{ $nilai->grade }}"
+                            <input type="text" class="form-control" name="nilai_grade" value="{{ $nilai->nilai_grade }}"
                                 readonly>
                         </div>
 

@@ -12,10 +12,15 @@
             <div class="card border">
                 <div class="card-header" align="right">
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
-                        Tambah Data
+                        data-bs-target="#exampleModal" data-bs-placement="bottom" title="Tambah Data Baru">
+                        <i class="nav-icon fas fa-user">&nbsp;+</i>
                     </button>
                 </div>
+                
+                <div class="card-header" align="center">
+                    <h5>Data Table Guru</h5>
+                </div>
+                
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped" id="dataTable">
@@ -53,7 +58,7 @@
                                                 Lihat
                                             </a> |
                                             <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                onclick="return confirm('Apakah Anda Yakin?')">
+                                                onclick="return confirm('Hapus Data Ini?')">
                                                 <i class="nav-icon fas fa-cut"></i>
                                                 Hapus
                                             </button>
@@ -84,7 +89,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">NIP</label>
-                        <input type="number" class="form-control  @error('nip') is-invalid @enderror" name="nip">
+                        <input type="number" class="form-control  @error('nip') is-invalid @enderror" name="nip" id="nip">
                         @error('nip')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -134,12 +139,28 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary" id="btnSimpan" disabled>Simpan</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+
+        const nip = document.getElementById('nip')
+        const btnSimpan = document.getElementById('btnSimpan');
+
+        nip.addEventListener("keyup", (e) => {
+            const value = e.currentTarget.value;
+                if (value === "") {
+                    btnSimpan.disabled = true;
+                }
+                else {
+                    btnSimpan.disabled = false;
+                }
+        });
+
+</script>
 @endsection
