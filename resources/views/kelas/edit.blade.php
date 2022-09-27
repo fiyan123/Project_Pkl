@@ -39,8 +39,8 @@
     
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit">Simpan</button>
-                                    <a href="{{ route('kelas.index') }}" class="btn btn-secondary">Kembali</a>
+                                    <button class="btn btn-primary" type="submit"><i class="bi bi-send-check-fill"></i>&nbsp;Simpan</button>
+                                    <a href="{{ route('kelas.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
                                 </div>
                             </div>
                         </form>

@@ -22,7 +22,7 @@
 
                         <div class="mb-3">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('kelas.index') }}" class="btn btn-primary" type="submit">Kembali</a>
+                                <a href="{{ route('kelas.index') }}" class="btn btn-dark" type="submit"><i class="bi bi-back"></i>&nbsp;Kembali</a>
                             </div>
                         </div>
                     </div>

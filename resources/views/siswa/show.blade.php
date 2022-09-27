@@ -37,7 +37,7 @@
 
                         <div class="mb-3">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('siswa.index') }}" class="btn btn-primary">Kembali</a>
+                                <a href="{{ route('siswa.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
                             </div>
                         </div>
 

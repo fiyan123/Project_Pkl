@@ -1,5 +1,6 @@
 @extends('layouts.guru')
 @section('content')
+
 <!-- Bootstrap CSS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
@@ -9,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             @include('layouts/_flash')
-            <div class="card border" style="width: 1105px">
+            <div class="card border" style="width: 1110px">
                 <div class="card-header" align="right">
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal" data-bs-placement="bottom" title="Tambah Data Baru">
@@ -98,7 +99,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">NIP GURU</label>
-                        <select name="id_guru" class="form-control @error('id_guru') is-invalid @enderror" id="">
+                        <select name="id_guru" class="form-control @error('id_guru') is-invalid @enderror" id="id_guru">
                             @foreach ($guru as $data)
                             <option value="{{ $data->id }}">{{ $data->nip }}</option>
                             @endforeach
@@ -217,7 +218,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary" id="btnSimpan">Simpan</button>
                     </div>
                 </form>
             </div>
