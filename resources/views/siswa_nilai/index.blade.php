@@ -10,10 +10,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             @include('layouts/_flash')
-            <div class="card border" style="width: 1100px">
+            <div class="card border">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped" id="dataTable">
+                            <h4 align="center" style="color: black">Rekap Akhir Nilai Siswa</h4><br>
                             <thead class="table-primary">
                                 <tr align="center">
                                     <th>NO</th>
@@ -32,7 +33,7 @@
                             </thead>
                             <tbody>
                                 @php $no = 1; @endphp
-                                @foreach ($nilai as $data)
+                                @foreach($nilai as $data)
                                 <tr align="center">
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $data->guru->nip }}</td>

@@ -16,7 +16,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url('/home2') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -39,7 +39,7 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data - Data:</h6>
-                <a class="collapse-item" href="{{ route('data_nilai.index') }}">
+                <a class="collapse-item" href="{{ route('nilai.index') }}">
                     <i class="fas fa-fw fa-book-open"></i>
                     Nilai Siswa
                 </a>

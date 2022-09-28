@@ -19,7 +19,7 @@ class NilaiController extends Controller
         $siswa = Siswa::all();
         // dd($guru);
         // return $guru;
-        return view('data_nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
+        return view('nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
 
     }
 
@@ -31,7 +31,7 @@ class NilaiController extends Controller
         $guru  = Guru::all();
         // dd($guru);
         // return $guru;
-        return view('data_nilai.create', compact('kelas', 'siswa', 'guru', 'nilai'));
+        return view('nilai.create', compact('kelas', 'siswa', 'guru', 'nilai'));
 
     }
 
@@ -74,14 +74,14 @@ class NilaiController extends Controller
         $nilai->nilai_grade = $grade;
 
         $nilai->save();
-        return redirect()->route('data_nilai.index')->with('success', 'Data berhasil dibuat!');
+        return redirect()->route('nilai.index')->with('success', 'Data berhasil dibuat!');
 
     }
 
     public function show($id)
     {
         $nilai = Nilai::findOrFail($id);
-        return view('data_nilai.show', compact('nilai'));
+        return view('nilai.show', compact('nilai'));
 
     }
 
@@ -91,7 +91,7 @@ class NilaiController extends Controller
         $siswa = Siswa::all();
         $kelas = Kelas::all();
         $guru = Guru::all();
-        return view('data_nilai.edit', compact('siswa', 'kelas', 'guru', 'nilai'));
+        return view('nilai.edit', compact('siswa', 'kelas', 'guru', 'nilai'));
 
     }
 
@@ -134,7 +134,7 @@ class NilaiController extends Controller
         $nilai->nilai_grade = $grade;
 
         $nilai->save();
-        return redirect()->route('data_nilai.index')
+        return redirect()->route('nilai.index')
             ->with('success', 'Data berhasil diedit!');
 
     }
@@ -143,7 +143,7 @@ class NilaiController extends Controller
     {
         $nilai = Nilai::findOrFail($id);
         $nilai->delete();
-        return redirect()->route('data_nilai.index')
+        return redirect()->route('nilai.index')
             ->with('success', 'Data berhasil dihapus!');
 
     }

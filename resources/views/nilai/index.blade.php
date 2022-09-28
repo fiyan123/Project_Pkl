@@ -54,16 +54,16 @@
                                     <td>{{ $data->raport }}</td>
                                     <td>{{ $data->nilai_grade }}</td>
                                     <td>
-                                        <form action="{{ route('data_nilai.destroy', $data->id) }}" method="post"
+                                        <form action="{{ route('nilai.destroy', $data->id) }}" method="post"
                                             class="d-inline">
                                             @csrf
                                             @method('delete')
-                                            <a href="{{ route('data_nilai.edit', $data->id) }}"
+                                            <a href="{{ route('nilai.edit', $data->id) }}"
                                                 class="btn btn-sm btn-outline-success" class="d-inline">
                                                 <i class="nav-icon fas fa-user"></i>
                                                 Ubah
                                             </a>
-                                            <a href="{{ route('data_nilai.show', $data->id) }}"
+                                            <a href="{{ route('nilai.show', $data->id) }}"
                                                 class="btn btn-sm btn-outline-info" class="d-inline">
                                                 <i class="nav-icon fas fa-eye"></i>
                                                 Lihat
@@ -95,7 +95,7 @@
             </div>
 
             <div class="modal-body">
-                <form action="{{ route('data_nilai.store') }}" method="post">
+                <form action="{{ route('nilai.store') }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">NIP GURU</label>

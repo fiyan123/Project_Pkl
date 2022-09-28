@@ -12,9 +12,10 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                        @endif
-                        Halo :)
-                    </div>
+                    @endif
+
+                    {{ __('Selamat Datang!') }}
+                </div>
             </div>
         </div>
     </div>

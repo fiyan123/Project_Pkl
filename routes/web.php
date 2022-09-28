@@ -57,12 +57,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 // Route Role Guru
 Route::group(['prefix' => 'data_nilai', 'middleware' => ['auth']], function () {
     Route::get('/', function () {
-        return view('data_nilai.index');
+        return view('nilai.index');
     });
 
     Route::resource('utama', UtamaController::class);
     Route::resource('utama_guru', UtamaguruController::class);
-    Route::resource('data_nilai', NilaiController::class);
+    Route::resource('nilai', NilaiController::class);
 
 });
 

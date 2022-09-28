@@ -77,7 +77,7 @@
 
                         <div class="mb-3">
                             <div class="d-grid gap-2">
-                                <a href="{{ route('data_nilai.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
+                                <a href="{{ route('nilai.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
                             </div>
                         </div>
 

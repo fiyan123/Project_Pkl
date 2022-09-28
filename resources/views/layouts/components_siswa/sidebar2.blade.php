@@ -67,11 +67,13 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Aksi:</h6>
-                <a class="collapse-item" href="cards.html">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" role="button" style="color: black">
+                    <i class="fas fa-sign-out-alt" style="color: black"></i>Keluar
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </div>
         </div>
     </li>
