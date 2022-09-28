@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 @section('content')
+
 <!-- Bootstrap CSS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -20,7 +19,6 @@
                 <div class="card-header" align="center">
                     <h5>Data Table Kelas</h5>
                 </div>
-
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped" id="dataTable">
@@ -85,7 +83,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- Akhir Delete --}}
                                     </td>
                                 </tr>
                                 @endforeach

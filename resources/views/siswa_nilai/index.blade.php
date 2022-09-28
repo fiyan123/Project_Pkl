@@ -6,15 +6,18 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container-xxl py-4">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Data Nilai</h6>
+            <h1 class="mb-5">Hasil Akhir Rekap Nilai Raport</h1>
+        </div>
         <div class="col-md-12">
             @include('layouts/_flash')
             <div class="card border">
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped" id="dataTable">
-                            <h4 align="center" style="color: black">Rekap Akhir Nilai Siswa</h4><br>
                             <thead class="table-primary">
                                 <tr align="center">
                                     <th>NO</th>
