@@ -137,6 +137,12 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets0/css/style.css') }}" rel="stylesheet">
+    <style>
+        body
+        {
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -161,8 +167,8 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
-                                <h1 class="display-3 text-white animated slideInDown">The Best Online Learning Platform</h1>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Penilaian Online Terbaik</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Platform Perhitungan Nilai Terbaik</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>                            </div>
                         </div>
                     </div>
@@ -174,8 +180,8 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Penilaian Online Terbaik</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Dapatkan Hasil Nilai Online Dari Rumah Anda</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
                             </div>
                         </div>
@@ -198,8 +204,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Data Keahlian </h6>
-                <h1 class="mb-5">Kemampuan Diluar Sekolah</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Data Kemampuan</h6>
+                <h1 class="mb-5">Hal - Hal Yang Bisa DiLakukan</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -223,8 +229,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Projek Rumahan</h5>
+                            <i class="fa fa-3x fa-folder-open text-primary mb-4"></i>
+                            <h5 class="mb-3">Tugas Projek</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                         </div>
                     </div>
@@ -232,7 +238,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                            <i class="fa fa-3x fa-book text-primary mb-4"></i>
                             <h5 class="mb-3">Buku Perpustakaan</h5>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                         </div>
