@@ -26,7 +26,7 @@
                         <table class="table table-striped" id="dataTable">
                             <thead class="table-dark">
                                 <tr align="center">
-                                    <th>NO</th>
+                                    <th>#</th>
                                     <th>NIP</th>
                                     <th>NAMA</th>
                                     <th>MATA PELAJARAN</th>
@@ -59,7 +59,7 @@
                                             </a> |
                                             <button type="submit" class="btn btn-sm btn-outline-danger"
                                                 onclick="return confirm('Hapus Data Ini?')">
-                                                <i class="nav-icon fas fa-cut"></i>
+                                                <i class="bi bi-trash"></i>
                                                 Hapus
                                             </button>
                                         </form>
@@ -69,12 +69,14 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="d-flex justify-content-end">
+                        {{ $guru->links() }} {{-- Pagination --}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -26,7 +26,7 @@
                         <table class="table table-striped" id="dataTable">
                             <thead class="table-dark">
                                 <tr align="center">
-                                    <th>NO</th>
+                                    <th>#</th>
                                     <th>NISN</th>
                                     <th>NAMA</th>
                                     <th>JENIS KELAMIN</th>
@@ -39,38 +39,41 @@
                             <tbody>
                                 @php $no = 1; @endphp
                                 @foreach ($siswa as $data)
-                                <tr align="center">
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $data->nis }}</td>
-                                    <td>{{ $data->nama }}</td>
-                                    <td>{{ $data->jenis_kelamin }}</td>
-                                    <td>{{ $data->kelas->kelas }}</td>
-                                    <td>{{ $data->kelas->jurusan }}</td>
-                                    <td>
-                                        <form action="{{ route('siswa.destroy', $data->id) }}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="{{ route('siswa.edit', $data->id) }}"
-                                                class="btn btn-sm btn-outline-success">
-                                                <i class="nav-icon fas fa-user"></i>
-                                                Ubah
-                                            </a> |
-                                            <a href="{{ route('siswa.show', $data->id) }}"
-                                                class="btn btn-sm btn-outline-info">
-                                                <i class="nav-icon fas fa-eye"></i>
-                                                Lihat
-                                            </a> |
-                                            <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                onclick="return confirm('Apakah Anda Yakin?')">
-                                                <i class="nav-icon fas fa-cut"></i>
-                                                Hapus
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                    <tr align="center">
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $data->nis }}</td>
+                                        <td>{{ $data->nama }}</td>
+                                        <td>{{ $data->jenis_kelamin }}</td>
+                                        <td>{{ $data->kelas->kelas }}</td>
+                                        <td>{{ $data->kelas->jurusan }}</td>
+                                        <td>
+                                            <form action="{{ route('siswa.destroy', $data->id) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <a href="{{ route('siswa.edit', $data->id) }}"
+                                                    class="btn btn-sm btn-outline-success">
+                                                    <i class="nav-icon fas fa-user"></i>
+                                                    Ubah
+                                                </a> |
+                                                <a href="{{ route('siswa.show', $data->id) }}"
+                                                    class="btn btn-sm btn-outline-info">
+                                                    <i class="nav-icon fas fa-eye"></i>
+                                                    Lihat
+                                                </a> |
+                                                <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Apakah Anda Yakin?')">
+                                                    <i class="bi bi-trash"></i>
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        {{ $siswa->links() }} {{-- Pagination --}}
                     </div>
                 </div>
             </div>

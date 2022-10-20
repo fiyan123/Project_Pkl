@@ -169,7 +169,8 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Penilaian Online Terbaik</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Platform Perhitungan Nilai Terbaik</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>                            </div>
+                                <p class="fs-5 text-white mb-4 pb-2"> "Saya mendengar, dan saya lupa. Saya melihat, dan saya ingat. Saya melakukannya, dan saya mengerti." Pepatah Cina.</p>                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,7 +183,7 @@
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Penilaian Online Terbaik</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Dapatkan Hasil Nilai Online Dari Rumah Anda</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
+                                <p class="fs-5 text-white mb-4 pb-2">"Jika orang tidak melakukan hal-hal konyol, tidak ada hal cerdas yang akan pernah terjadi." <br> Ludwig Wittgenstein</p>
                             </div>
                         </div>
                     </div>
@@ -261,8 +262,8 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Tentang Website</h6>
                     <h1 class="mb-4">Penilaian Akademik Siswa</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4"> “Jika Anda membuat rencana untuk satu tahun, taburlah padi; jika Anda membuat rencana untuk satu dekade, tanamlah pohon; jika Anda membuat rencana untuk seumur hidup, didiklah orang-orang” – Pepatah Cina</p>
+                    <p class="mb-4">"Belajar tanpa berpikir adalah pekerjaan yang sia-sia, berpikir tanpa belajar itu berbahaya." – Konfusius</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Kemampuan Struktur</p>

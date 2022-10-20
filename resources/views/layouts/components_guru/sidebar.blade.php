@@ -38,7 +38,7 @@
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data - Data:</h6>
+                <h6 class="collapse-header">Penilaian:</h6>
                 <a class="collapse-item" href="{{ route('nilai.index') }}">
                     <i class="fas fa-fw fa-book-open"></i>
                     Nilai Siswa

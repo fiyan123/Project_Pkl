@@ -1,4 +1,4 @@
-@extends('layouts.guru')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -6,7 +6,7 @@
         <div class="col-md-12">
             @include('layouts/_flash')
             <div class="card">
-                <div class="card-header bg-primary mb-2" align="center" style="color: white">
+                <div class="card-header" align="center">
                     DATA DARI SISWA
                 </div>
                 <div class="card-body">

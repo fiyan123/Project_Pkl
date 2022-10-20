@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ asset('assest/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="hold-transition login-page">
   
@@ -24,56 +25,44 @@
 		<div class="card">
 			<div class="card-body login-card-body">
 				<p class="login-box-msg">Silahkan Masukkan Email Dan Password</p>
-			<div align="center">
+			<div align="center" class="mt-4">
 				<img src="https://smpn9baubau.com//assets/dist/img/AdminLTELogo.png" alt="logo" width="150px">
 			</div>
-			<br>
-		<form action="{{route('login')}}" method="post">
-			@csrf
-				<div class="input-group mb-3">
-					<input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
-					<div class="input-group-append">
-						<div class="input-group-text">
-							<span class="fas fa-envelope"></span>
+			<form action="{{ route('login') }}" method="POST" class="mt-4">
+				@csrf
+					<div class="input-group mb-3">
+						<input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-envelope"></span>
+							</div>
+						</div>
+						@error('email')
+							<span class="invalid-feedback" role="alert">
+								<strong>{{ $message }}</strong>
+							</span>
+						@enderror
+					</div>
+					<div class="input-group mb-3">
+						<input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+							</div>
+						</div>
+						@error('password')
+							<span class="invalid-feedback" role="alert">
+								<strong>{{ $message }}</strong>
+							</span>
+						@enderror
+					</div>
+					<div align="center">
+						<div class="col-4">
+							<button type="submit" class="btn btn-primary btn-block" title="masuk">Masuk</button>
 						</div>
 					</div>
-					@error('email')
-					<span class="invalid-feedback" role="alert">
-						<strong>{{ $message }}</strong>
-					</span>
-				@enderror
 				</div>
-				<div class="input-group mb-3">
-					<input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
-					<div class="input-group-append">
-						<div class="input-group-text">
-							<span class="fas fa-lock"></span>
-						</div>
-					</div>
-					@error('password')
-					<span class="invalid-feedback" role="alert">
-						<strong>{{ $message }}</strong>
-					</span>
-				@enderror
-				</div>
-				<div align="center">
-					<div class="col-4">
-						<button type="submit" class="btn btn-primary btn-block">Masuk</button>
-					</div>
-				</div>
-			</div>
-		</form>
-			<br>
-			<div class="social-auth-links text-center mb-3">
-			<p>- OR -</p>
-				<a href="#" class="btn btn-block btn-primary">
-					<i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-				</a>
-				<a href="#" class="btn btn-block btn-info">
-					<i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-				</a>
-			</div>
-			<!-- /.social-auth-links -->
+			</form>
 		</div>
 	</div>
 </div>

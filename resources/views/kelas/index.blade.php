@@ -24,7 +24,7 @@
                         <table class="table table-striped" id="dataTable">
                             <thead class="table-dark">
                                 <tr align="center">
-                                    <th>NO</th>
+                                    <th>#</th>
                                     <th>KELAS</th>
                                     <th>JURUSAN</th>
                                     <th>AKSI</th>
@@ -33,61 +33,36 @@
                             <tbody>
                                 @php $no = 1; @endphp
                                 @foreach ($kelas as $data)
-                                <tr align="center">
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $data->kelas }}</td>
-                                    <td>{{ $data->jurusan }}</td>
-                                    <td>
-                                        <form action="{{ route('kelas.destroy', $data->id) }}" method="post">
-                                            @csrf
-                                            @method('delete')
-                                            <a href="{{ route('kelas.edit', $data->id) }}" class="btn btn-sm btn-outline-success">
-                                                <i class="nav-icon fas fa-user"></i>
-                                                Ubah
-                                            </a> |
-                                            <a href="{{ route('kelas.show', $data->id) }}" class="btn btn-sm btn-outline-info">
-                                                <i class="nav-icon fas fa-eye"></i>
-                                                Lihat
-                                            </a>
-                                        </form>
-
-                                        <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
-                                            data-bs-target="#ModalDelete">
-                                            <i class="nav-icon fas fa-cut"></i>
-                                            Hapus
-                                        </button>
-                                    
-                                        <!-- Modal Delete-->
-                                        <div class="modal fade" id="ModalDelete" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h6 class="modal-title" id="exampleModalLabel">
-                                                            Apakah Anda Yakin?
-                                                        </h6>
-                                                    </div>
-
-                                                    <div class="modal-body">
-                                                        <input type="checkbox" id="check" onclick="enable()">&nbsp; Ya, Hapus Data Ini
-                                                    </div>
-
-                                                    <div class="modal-footer">
-                                                        <form action="{{ route('kelas.destroy', $data->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('delete')
-                                                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="btnHapus" disabled="true">Hapus</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr align="center">
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $data->kelas }}</td>
+                                        <td>{{ $data->jurusan }}</td>
+                                        <td>
+                                            <form action="{{ route('kelas.destroy', $data->id) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <a href="{{ route('kelas.edit', $data->id) }}" class="btn btn-sm btn-outline-success">
+                                                    <i class="nav-icon fas fa-user"></i>
+                                                    Ubah
+                                                </a> |
+                                                <a href="{{ route('kelas.show', $data->id) }}" class="btn btn-sm btn-outline-info">
+                                                    <i class="nav-icon fas fa-eye"></i>
+                                                    Lihat
+                                                </a>
+                                                <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Hapus Data Ini?')">
+                                                    <i class="bi bi-trash"></i>
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        {{ $kelas->links() }} {{-- Pagination --}}
                     </div>
                 </div>
             </div>

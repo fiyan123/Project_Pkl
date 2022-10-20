@@ -9,17 +9,15 @@ class KelasController extends Controller
 {
     public function index()
     {
-        $kelas = Kelas::latest()->get();
-        // dd($guru);
-        // return $guru;
+        $kelas = Kelas::latest()->paginate(3);
+    
         return view('kelas.index', compact('kelas'));
     }
 
     public function create()
     {
         $kelas = Kelas::all();
-        // dd($guru);
-        // return $guru;
+    
         return view('kelas.create', compact('kelas'));
     }
 

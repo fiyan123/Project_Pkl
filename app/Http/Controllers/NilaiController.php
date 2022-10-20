@@ -17,8 +17,6 @@ class NilaiController extends Controller
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();
-        // dd($guru);
-        // return $guru;
         return view('nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
 
     }
