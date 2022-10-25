@@ -35,10 +35,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php $no = 1; @endphp
                                 @foreach ($guru as $data)
                                 <tr align="center">
-                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->nip }}</td>
                                     <td>{{ $data->nama }}</td>
                                     <td>{{ $data->mata_pelajaran }}</td>

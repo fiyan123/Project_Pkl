@@ -37,10 +37,9 @@
                             </thead>
 
                             <tbody>
-                                @php $no = 1; @endphp
                                 @foreach ($siswa as $data)
                                     <tr align="center">
-                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->nis }}</td>
                                         <td>{{ $data->nama }}</td>
                                         <td>{{ $data->jenis_kelamin }}</td>

@@ -22,33 +22,4 @@ class Siswa_dataController extends Controller
         return view('siswa_nilai.index', compact('nilai', 'siswa', 'kelas', 'guru'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
 }

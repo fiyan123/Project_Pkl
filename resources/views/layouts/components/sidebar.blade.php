@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 		<!-- Brand Logo -->
-		<a class="brand-link">
+		<a class="brand-link" href="/home">
 			<img src="https://smpn9baubau.com//assets/dist/img/AdminLTELogo.png" class="brand-image img-circle elevation-4" style="opacity: .8">
 			<span class="brand-text font-weight-light">Penilaian Siswa | Pans</span>
 		</a>
@@ -13,7 +13,7 @@
 				</div>
 
 				<div class="info">
-					<a class="d-block">{{ Auth::user()->name }}</a>
+					<a class="d-block">{{ auth::user()->name }}</a>
 				</div>
 			</div>
 
@@ -58,41 +58,40 @@
 						</li>
 					</ul>
 				</li>
-
-				{{-- Untuk Admin --}}
-				{{-- @can('admin') --}}
-				<li class="nav-header">ADMINISTRATOR</li>
+				
+				{{-- Admin Master --}}
+				@can('admin')
+				<li class="nav-header mt-3">ADMIN MASTER</li>
 					<li class="nav-item">
 						<a href="#" class="nav-link">
-							<i class="nav-icon fas fa-globe"></i>
-								<p>
-									Admin Master
+						<i class="nav-icon fas fa-globe"></i>
+							<p>
+								Admin Data
 								<i class="fas fa-angle-left right"></i>
 							</p>
 						</a>
 						<ul class="nav nav-treeview">
-							<li class="nav-header">Data Admin</li>
-								<li class="nav-item">
-									<a href="{{ route('siswa.index') }}" class="nav-link {{ Request::is('admin/siswa*') ? 'active' : '' }}">
-										<i class="far fa-dot-circle nav-icon"></i>
-										<p>Data Siswa</p>
-									</a>
-								</li>
 							<li class="nav-item">
 								<a href="{{ route('kelas.index') }}" class="nav-link {{ Request::is('admin/kelas*') ? 'active' : '' }}">
-									<i class="far fa-dot-circle nav-icon"></i>
+									<i class="nav-icon fas fa-edit"></i>
 									<p>Data Kelas</p>
 								</a>
 							</li>
-							<li class="nav-item">
-								<a href="{{ route('guru.index') }}" class="nav-link {{ Request::is('admin/guru*') ? 'active' : '' }}">
-									<i class="far fa-dot-circle nav-icon"></i>
-									<p>Data Guru</p>
-								</a>
-							</li>
-						</ul>
-					</li>
-				{{-- @endcan --}}
+						<li class="nav-item">
+							<a href="{{ route('guru.index') }}" class="nav-link {{ Request::is('admin/guru*') ? 'active' : '' }}">
+								<i class="nav-icon fas fa-edit"></i>
+								<p>Data Guru</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('siswa.index') }}" class="nav-link {{ Request::is('admin/siswa*') ? 'active' : '' }}">
+								<i class="nav-icon fas fa-edit"></i>
+								<p>Data Siswa</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				@endcan
 			</ul>
 		</nav>
 	</div>

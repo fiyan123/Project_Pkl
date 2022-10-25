@@ -13,7 +13,7 @@ class NilaiController extends Controller
     public function index()
     {
 
-        $nilai = Nilai::latest()->get();
+        $nilai = Nilai::latest()->paginate(3);
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();

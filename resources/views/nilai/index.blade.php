@@ -1,91 +1,3 @@
-{{-- @extends('layouts.admin')
-@section('content')
-<div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Fixed Header Table</h3>
-
-        <div class="card-tools">
-          <div class="input-group input-group-sm" style="width: 150px;">
-            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-default">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body table-responsive p-0">
-        <table class="table table-head-fixed text-nowrap">
-          <thead>
-            <tr align="center">
-                <th>#</th>
-                <th>NIP GURU</th>
-                <th>NISN</th>
-                <th>NAMA</th>
-                <th>KELAS</th>
-                <th>JURUSAN</th>
-                <th>NILAI KEHADIRAN</th>
-                <th>NILAI HARIAN</th>
-                <th>NILAI PAS</th>
-                <th>NILAI PAT</th>
-                <th>NILAI RAPORT</th>
-                <th>GRADE</th>
-                <th>AKSI</th>
-            </tr>
-          </thead>
-          <tbody>
-            @php $no = 1; @endphp
-                @foreach ($nilai as $data)
-                <tr>
-                    <td>{{ $no++ }}</td>
-                    <td>{{ $data->guru->nip }}</td>
-                    <td>{{ $data->siswa->nis }}</td>
-                    <td>{{ $data->siswa->nama }}</td>
-                    <td>{{ $data->kelas->kelas }}</td>
-                    <td>{{ $data->kelas->jurusan }}</td>
-                    <td>{{ $data->nilai_kehadiran }}</td>
-                    <td>{{ $data->nilai_harian }}</td>
-                    <td>{{ $data->pas }}</td>
-                    <td>{{ $data->pat }}</td>
-                    <td>{{ $data->raport }}</td>
-                    <td>{{ $data->nilai_grade }}</td>
-                    <td>
-                        <form action="{{ route('nilai.destroy', $data->id) }}" method="post"
-                            class="d-inline">
-                            @csrf
-                            @method('delete')
-                            <a href="{{ route('nilai.edit', $data->id) }}"
-                                class="btn btn-sm btn-outline-success" class="d-inline">
-                                <i class="nav-icon fas fa-user"></i>
-                                Ubah
-                            </a>
-                            <a href="{{ route('nilai.show', $data->id) }}"
-                                class="btn btn-sm btn-outline-info" class="d-inline">
-                                <i class="nav-icon fas fa-eye"></i>
-                                Lihat
-                            </a>
-                            <button type="submit" class="btn btn-sm btn-outline-danger" class="d-inline"
-                                onclick="return confirm('Apakah Anda Yakin?')">
-                                <i class="bi bi-trash"></i>
-                                Hapus
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-          </tbody>
-        </table>
-      </div>
-      <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
-  </div>
-@endsection --}}
-
 @extends('layouts.admin')
 @section('content')
 
@@ -124,59 +36,55 @@
                         <th>AKSI</th>
                     </tr> 
                 </thead>
-                <tbody>
-                    @php $no = 1; @endphp
-                    @foreach ($nilai as $data)
-                    <tr align="center">
-                        <td>{{ $no++ }}</td>
-                        <td>{{ $data->guru->nip }}</td>
-                        <td>{{ $data->siswa->nis }}</td>
-                        <td>{{ $data->siswa->nama }}</td>
-                        <td>{{ $data->kelas->kelas }}</td>
-                        <td>{{ $data->kelas->jurusan }}</td>
-                        <td>{{ $data->nilai_kehadiran }}</td>
-                        <td>{{ $data->nilai_harian }}</td>
-                        <td>{{ $data->pas }}</td>
-                        <td>{{ $data->pat }}</td>
-                        <td>{{ $data->raport }}</td>
-                        <td>{{ $data->nilai_grade }}</td>
-                        <td>
-                            <form action="{{ route('nilai.destroy', $data->id) }}" method="post"
-                                class="d-inline">
-                                @csrf
-                                @method('delete')
-                                <a href="{{ route('nilai.edit', $data->id) }}"
-                                    class="btn btn-sm btn-outline-success" class="d-inline">
-                                    <i class="nav-icon fas fa-user"></i>
-                                    Ubah
-                                </a>
-                                <a href="{{ route('nilai.show', $data->id) }}"
-                                    class="btn btn-sm btn-outline-info" class="d-inline">
-                                    <i class="nav-icon fas fa-eye"></i>
-                                    Lihat
-                                </a>
-                                <button type="submit" class="btn btn-sm btn-outline-danger" class="d-inline"
-                                    onclick="return confirm('Apakah Anda Yakin?')">
-                                    <i class="bi bi-trash"></i>
-                                    Hapus
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
+                    <tbody>
+                        @php $no = 1; @endphp
+                        @foreach ($nilai as $data)
+                            <tr align="center">
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $data->guru->nip }}</td>
+                                <td>{{ $data->siswa->nis }}</td>
+                                <td>{{ $data->siswa->nama }}</td>
+                                <td>{{ $data->kelas->kelas }}</td>
+                                <td>{{ $data->kelas->jurusan }}</td>
+                                <td>{{ $data->nilai_kehadiran }}</td>
+                                <td>{{ $data->nilai_harian }}</td>
+                                <td>{{ $data->pas }}</td>
+                                <td>{{ $data->pat }}</td>
+                                <td>{{ $data->raport }}</td>
+                                <td>{{ $data->nilai_grade }}</td>
+                                <td>
+                                    <form action="{{ route('nilai.destroy', $data->id) }}" method="post"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('delete')
+                                        <a href="{{ route('nilai.edit', $data->id) }}"
+                                            class="btn btn-sm btn-outline-success" class="d-inline">
+                                            <i class="nav-icon fas fa-user"></i>
+                                            Ubah
+                                        </a>
+                                        <a href="{{ route('nilai.show', $data->id) }}"
+                                            class="btn btn-sm btn-outline-info" class="d-inline">
+                                            <i class="nav-icon fas fa-eye"></i>
+                                            Lihat
+                                        </a>
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" class="d-inline"
+                                            onclick="return confirm('Apakah Anda Yakin?')">
+                                            <i class="bi bi-trash"></i>
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
             </div>
             <!-- /.card-body -->
             <div class="card-footer clearfix">
-            <ul class="pagination pagination-sm m-0 float-right">
-                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
-        </div>
+                <div class="d-flex justify-content-end">
+                    {{ $nilai->links() }} {{-- Pagination --}}
+                </div>
+            </div>
     </div>
 </div>
 

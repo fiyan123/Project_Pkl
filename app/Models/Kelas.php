@@ -15,10 +15,11 @@ class Kelas extends Model
     public $timestamps = true;
 
       // membuat relasi one to many
-      public function siswa()
-      {
+    public function siswa()
+    {
           // data dari model 'kelas' bisa memiliki banyak data
           // dari model 'Siswa' melalui id_kelas
           return $this->belongsTo(Siswa::class, 'id_kelas');
-      }
+    }
+
 }
