@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Kelas;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Siswa extends Model
 {
@@ -11,18 +12,19 @@ class Siswa extends Model
     public $fillable = ['nis', 'nama', 'jenis_kelamin' , 'id_kelas'];
     public $timestamps = true;
 
-    // membuat relasi one to one di model
-    // public function kelas()
-    // {
-    //     // data dari model 'Siswa' bisa dimiliki
-    //     // oleh model 'kelas' melalui 'id_kelas'
-    //     return $this->belongsTo(Kelas::class, 'id_kelas');
-    // }
     public function kelas()
     {
         // data dari model 'Siswa' bisa dimiliki
         // oleh model 'kelas' melalui 'id_kelas'
         return $this->belongsTo(Kelas::class, 'id_kelas');
+    }
+
+
+    public function scopeFilter($query, $filters)
+    {
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query->when('nama', 'like', '%' .$search. '%');
+        });
     }
 
 }

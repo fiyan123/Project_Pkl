@@ -16,11 +16,9 @@
                         <i class="nav-icon fas fa-user">&nbsp;+</i>
                     </button>
                 </div>
-                
                 <div class="card-header" align="center">
                     <h5>Data Table Siswa</h5>
                 </div>
-
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped" id="dataTable">
@@ -37,10 +35,9 @@
                             </thead>
 
                             <tbody>
-                                @php $no = 1; @endphp
                                 @foreach ($siswa as $data)
                                     <tr align="center">
-                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->nis }}</td>
                                         <td>{{ $data->nama }}</td>
                                         <td>{{ $data->jenis_kelamin }}</td>

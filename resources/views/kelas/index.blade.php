@@ -31,10 +31,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php $no = 1; @endphp
                                 @foreach ($kelas as $data)
                                     <tr align="center">
-                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->kelas }}</td>
                                         <td>{{ $data->jurusan }}</td>
                                         <td>
