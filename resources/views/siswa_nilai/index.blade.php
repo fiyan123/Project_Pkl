@@ -12,9 +12,9 @@
             <h1 class="mb-5">Nilai Akhir Dari Siswa</h1>
         </div>
             <div class="card">
-                    <div class="card-header" align="center">
-                        <h5>Data Nilai Siswa</h5>
-                    </div>
+                <div class="card-header" align="center">
+                    <h5>Data Nilai Siswa</h5>
+                </div>
                     <div class="card-body table-responsive p-0">
                         <table class="table table-bordered text-nowrap">
                             <thead>
