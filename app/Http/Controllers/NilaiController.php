@@ -27,8 +27,7 @@ class NilaiController extends Controller
         $siswa = Siswa::all();
         $kelas = Kelas::all();
         $guru  = Guru::all();
-        // dd($guru);
-        // return $guru;
+   
         return view('nilai.create', compact('kelas', 'siswa', 'guru', 'nilai'));
 
     }
@@ -132,8 +131,7 @@ class NilaiController extends Controller
         $nilai->nilai_grade = $grade;
 
         $nilai->save();
-        return redirect()->route('nilai.index')
-            ->with('success', 'Data berhasil diedit!');
+        return redirect()->route('nilai.index')->with('success', 'Data berhasil diedit!');
 
     }
 
@@ -141,8 +139,7 @@ class NilaiController extends Controller
     {
         $nilai = Nilai::findOrFail($id);
         $nilai->delete();
-        return redirect()->route('nilai.index')
-            ->with('success', 'Data berhasil dihapus!');
+        return redirect()->route('nilai.index')->with('success', 'Data berhasil dihapus!');
 
     }
 }

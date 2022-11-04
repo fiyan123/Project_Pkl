@@ -15,20 +15,18 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body class="hold-transition login-page">
-	
+<body class="hold-transition login-page">	
 <div class="login-box mb-5">
-		<div class="login-logo">
-			<a href="#" class="text-decoration-none"><strong style="font-family: 'Times New Roman', Times, serif"> Penilaian Akademik Nilai Siswa </strong></a>
-		</div>
-
+	<div class="login-logo">
+		<a href="/" class="text-decoration-none"><strong style="font-family: 'Times New Roman', Times, serif"> Penilaian Akademik Nilai Siswa </strong></a>
+	</div>
     <!-- /.login-logo -->
-		<div class="card">
-			<div class="card-body login-card-body">
-				<p class="login-box-msg">Silahkan Masukkan Email Dan Password</p>
-			<div align="center" class="mt-2">
+	<div class="card">
+		<div class="card-body login-card-body mb-5">
+			<p class="login-box-msg">Silahkan Masukkan Email Dan Password</p>
+		<div align="center" class="mt-2">
 				<img src="https://smpn9baubau.com//assets/dist/img/AdminLTELogo.png" alt="logo" width="150px">
-			</div>
+		</div>
 		<form action="{{ url('/login') }}" method="POST" class="mt-5">
 			@csrf
 				<div class="input-group mb-3">

@@ -8,23 +8,21 @@ use App\Http\Controllers\Siswa_dataController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('login');
+// Route Siswa
+Route::get('/', [Siswa_dataController::class, 'index']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 Auth::routes();
 Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // Route Role Guru
 Route::group(['prefix' => 'guru', 'middleware' => ['auth']], function () {
     Route::resource('nilai', NilaiController::class);
-});
-
-// Route Role Siswa
-Route::group(['middleware' => ['auth']], function () {
-    Route::resource('siswa_nilai', Siswa_dataController::class);
 });
 
 // Route Admin

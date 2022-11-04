@@ -14,6 +14,10 @@
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+	 <!-- SweetAlert2 -->
+	<link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+	<!-- Toastr -->
+	<link rel="stylesheet" href="{{ asset('assets/plugins/toastr/toastr.min.css') }}">
 	<style>
 		body{
 			font-family: 'Times New Roman', Times, serif;
@@ -54,14 +58,12 @@
 	</aside>
 	<!-- /.control-sidebar -->
 
-	<!-- Main Footer -->
 	<div align="right">
 		<footer class="main-footer">
-			<strong>Copyright &copy; Penilaian Akademik Siswa.</strong>
+			<strong>Copyright &copy; Penilaian Akademik Nilai Siswa.</strong>
 		</footer>
 	</div>
 </div>
-<!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
@@ -77,5 +79,11 @@
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('assets/dist/js/pages/dashboard3.js') }}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- SweetAlert2 -->
+<script src="{{ asset('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+<!-- Toastr -->
+<script src="{{ asset('assets/plugins/toastr/toastr.min.js') }}"></script>
 </body>
 </html>

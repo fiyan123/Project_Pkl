@@ -4,7 +4,6 @@
 <!-- Bootstrap CSS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -14,9 +13,6 @@
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal"  data-bs-placement="top" title="Tambah Data Baru">
                         <i class="nav-icon fas fa-user">&nbsp;+</i>
-                    </button>
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-                     Tooltip on top
                     </button>
                 </div>
                 
@@ -106,7 +102,6 @@
                     </div>
 
                     <div class="modal-footer">
-                        {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button> --}}
                         <button type="submit" class="btn btn-primary" id="simpan" disabled>Simpan</button>
                     </div>
                 </form>
@@ -117,7 +112,7 @@
 
 
 {{-- Script Button --}}
-<Script>
+<script>
         const simpanButton = document.getElementById("simpan");
         const kelasButton = document.getElementById("kelas");
 
@@ -145,7 +140,20 @@
                     btnHapus.disabled = "true";
                 }
         };
+</script>
+<script>
+    $(function() {
+      var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+  
+      $('.toastrDefaultSuccess').click(function() {
+        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+      });
+    });
 
-
-</Script>
+</script>
 @endsection
