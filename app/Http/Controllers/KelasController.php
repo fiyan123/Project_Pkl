@@ -9,9 +9,9 @@ class KelasController extends Controller
 {
     public function index()
     {
-        $kelas = Kelas::latest()->paginate(3);
+        $kelas = Kelas::latest()->get();
     
-        return view('kelas.index', compact('kelas'));
+        return view('admin.kelas.index', compact('kelas'));
     }
 
     public function create()
@@ -40,14 +40,14 @@ class KelasController extends Controller
     public function show($id)
     {
         $kelas = Kelas::findOrFail($id);
-        return view('kelas.show', compact('kelas'));
+        return view('admin.kelas.show', compact('kelas'));
     }
 
    
     public function edit($id)
     {
         $kelas = Kelas::findOrFail($id);
-        return view('kelas.edit', compact('kelas'));
+        return view('admin.kelas.edit', compact('kelas'));
     }
 
     public function update(Request $request, $id)

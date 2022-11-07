@@ -18,10 +18,10 @@
             <div class="card-header" align="center">
                 <h5>Data Table Nilai</h5>
             </div>
-            <div class="card-body table-responsive p-0">
-                <table class="table table-bordered text-nowrap">
+            <div class="card-body table-responsive">
+                <table class="table table-hover text-nowrap" id="dataTable">
                 <thead>
-                    <tr align="center">
+                    <tr>
                         <th>#</th>
                         <th>NIP GURU</th>
                         <th>NISN</th>
@@ -38,10 +38,9 @@
                     </tr> 
                 </thead>
                     <tbody>
-                        @php $no = 1; @endphp
                         @foreach ($nilai as $data)
-                            <tr align="center">
-                                <td>{{ $no++ }}</td>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->guru->nip }}</td>
                                 <td>{{ $data->siswa->nis }}</td>
                                 <td>{{ $data->siswa->nama }}</td>
@@ -79,12 +78,6 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer clearfix">
-                <div class="d-flex justify-content-end">
-                    {{ $nilai->links() }} {{-- Pagination --}}
-                </div>
             </div>
     </div>
 </div>

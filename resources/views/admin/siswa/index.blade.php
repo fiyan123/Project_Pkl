@@ -21,9 +21,9 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped" id="dataTable">
-                            <thead class="table-dark">
-                                <tr align="center">
+                        <table class="table table-hover" id="dataTable">
+                            <thead>
+                                <tr>
                                     <th>#</th>
                                     <th>NISN</th>
                                     <th>NAMA</th>
@@ -36,7 +36,7 @@
 
                             <tbody>
                                 @foreach ($siswa as $data)
-                                    <tr align="center">
+                                    <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->nis }}</td>
                                         <td>{{ $data->nama }}</td>
@@ -69,9 +69,9 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="d-flex justify-content-end">
-                        {{ $siswa->links() }} {{-- Pagination --}}
-                    </div>
+                    {{-- <div class="d-flex justify-content-end">
+                        {{ $siswa->links() }} 
+                    </div> --}}
                 </div>
             </div>
         </div>

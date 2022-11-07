@@ -23,9 +23,9 @@
                 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped" id="dataTable">
-                            <thead class="table-dark">
-                                <tr align="center">
+                        <table class="table table-hover" id="dataTable">
+                            <thead>
+                                <tr>
                                     <th>#</th>
                                     <th>NIP</th>
                                     <th>NAMA</th>
@@ -36,7 +36,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($guru as $data)
-                                <tr align="center">
+                                <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->nip }}</td>
                                     <td>{{ $data->nama }}</td>
@@ -67,9 +67,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        {{ $guru->links() }} {{-- Pagination --}}
                     </div>
                 </div>
             </div>

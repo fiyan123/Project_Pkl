@@ -9,9 +9,9 @@ class GuruController extends Controller
 {
     public function index()
     {
-        $guru = Guru::latest()->paginate(3);
+        $guru = Guru::latest()->get();
 
-        return view('guru.index', compact('guru'));
+        return view('admin.guru.index', compact('guru'));
     }
 
     public function create()
@@ -38,21 +38,21 @@ class GuruController extends Controller
         $guru->mata_pelajaran = $request->mata_pelajaran;
         $guru->save();
         return redirect()->route('guru.index')
-            ->with('success', 'Data berhasil dibuat!');
+            ->with('success', 'Data berhasil ditambah!');
     }
 
     public function show($id)
     {
         $guru = Guru::findOrFail($id);
 
-        return view('guru.show', compact('guru'));
+        return view('admin.guru.show', compact('guru'));
     }
 
     public function edit($id)
     {
         $guru = Guru::findOrFail($id);
 
-        return view('guru.edit', compact('guru'));
+        return view('admin.guru.edit', compact('guru'));
     }
 
     public function update(Request $request, $id)

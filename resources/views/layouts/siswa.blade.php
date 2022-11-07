@@ -29,6 +29,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('assets0/css/style.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('assets0/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets0/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <!--end::Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="{{ asset('assets0/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
     <style>
         body
         {
@@ -201,5 +209,15 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets0/js/main.js') }}"></script>
+
+    <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
+    <script src="{{ asset('DataTables/datatables.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/bootstrap.min.js') }}" defer></script> --}}
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+    </script>
 </body>
 </html>

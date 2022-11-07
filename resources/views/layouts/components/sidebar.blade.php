@@ -36,34 +36,23 @@
 				{{-- Admin Master --}}
 				@can('admin')
 				<li class="nav-header mt-2">ADMIN MASTER</li>
-					<li class="nav-item">
-						<a href="#" class="nav-link">
-						<i class="nav-icon fas fa-globe"></i>
-							<p>
-								Admin Data
-								<i class="fas fa-angle-left right"></i>
-							</p>
-						</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item">
-							<a href="{{ route('kelas.index') }}" class="nav-link {{ Request::is('admin/kelas*') ? 'active' : '' }}">
-								<i class="nav-icon fas fa-edit"></i>
-								<p>Data Kelas</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="{{ route('guru.index') }}" class="nav-link {{ Request::is('admin/guru*') ? 'active' : '' }}">
-								<i class="nav-icon fas fa-edit"></i>
-								<p>Data Guru</p>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="{{ route('siswa.index') }}" class="nav-link {{ Request::is('admin/siswa*') ? 'active' : '' }}">
-								<i class="nav-icon fas fa-edit"></i>
-								<p>Data Siswa</p>
-							</a>
-						</li>
-					</ul>
+				<li class="nav-item">
+					<a href="{{ route('kelas.index') }}" class="nav-link {{ Request::is('admin/kelas*') ? 'active' : '' }}">
+						<i class="nav-icon fas fa-edit"></i>
+						<p>Data Kelas</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ route('guru.index') }}" class="nav-link {{ Request::is('admin/guru*') ? 'active' : '' }}">
+						<i class="nav-icon fas fa-edit"></i>
+						<p>Data Guru</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ route('siswa.index') }}" class="nav-link {{ Request::is('admin/siswa*') ? 'active' : '' }}">
+						<i class="nav-icon fas fa-edit"></i>
+						<p>Data Siswa</p>
+					</a>
 				</li>
 				@endcan
 			</ul>

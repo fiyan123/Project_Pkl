@@ -21,9 +21,9 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped" id="dataTable">
-                            <thead class="table-dark">
-                                <tr align="center">
+                        <table class="table table-hover" id="dataTable">
+                            <thead>
+                                <tr>
                                     <th>#</th>
                                     <th>KELAS</th>
                                     <th>JURUSAN</th>
@@ -32,7 +32,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($kelas as $data)
-                                    <tr align="center">
+                                    <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $data->kelas }}</td>
                                         <td>{{ $data->jurusan }}</td>
@@ -59,9 +59,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        {{ $kelas->links() }} {{-- Pagination --}}
                     </div>
                 </div>
             </div>
@@ -140,20 +137,5 @@
                     btnHapus.disabled = "true";
                 }
         };
-</script>
-<script>
-    $(function() {
-      var Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000
-      });
-  
-      $('.toastrDefaultSuccess').click(function() {
-        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-      });
-    });
-
 </script>
 @endsection

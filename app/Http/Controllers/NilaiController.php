@@ -13,11 +13,11 @@ class NilaiController extends Controller
     public function index()
     {
 
-        $nilai = Nilai::latest()->paginate(3);
+        $nilai = Nilai::latest()->get();
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();
-        return view('nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
+        return view('GuruUser.nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
 
     }
 
@@ -43,7 +43,6 @@ class NilaiController extends Controller
             'nilai_harian' => 'required',
             'pas' => 'required',
             'pat' => 'required',
-            // 'raport' => 'required',
 
         ]);
 
@@ -71,14 +70,14 @@ class NilaiController extends Controller
         $nilai->nilai_grade = $grade;
 
         $nilai->save();
-        return redirect()->route('nilai.index')->with('success', 'Data berhasil dibuat!');
+        return redirect()->route('nilai.index')->with('success', 'Data berhasil ditambah!');
 
     }
 
     public function show($id)
     {
         $nilai = Nilai::findOrFail($id);
-        return view('nilai.show', compact('nilai'));
+        return view('GuruUser.nilai.show', compact('nilai'));
 
     }
 
@@ -88,7 +87,7 @@ class NilaiController extends Controller
         $siswa = Siswa::all();
         $kelas = Kelas::all();
         $guru = Guru::all();
-        return view('nilai.edit', compact('siswa', 'kelas', 'guru', 'nilai'));
+        return view('GuruUser.nilai.edit', compact('siswa', 'kelas', 'guru', 'nilai'));
 
     }
 
@@ -103,7 +102,6 @@ class NilaiController extends Controller
             'nilai_harian' => 'required',
             'pas' => 'required',
             'pat' => 'required',
-            // 'raport' => 'required',
 
         ]);
 
