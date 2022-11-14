@@ -17,13 +17,15 @@
                     </button>
                 </div>
                 
-                <div class="card-header" align="center">
-                    <h5>Data Table Guru</h5>
+                <div class="card-header">
+                    <div class="card-title">
+                        <h5>Data Table Guru</h5>
+                    </div>
                 </div>
                 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover" id="dataTable">
+                        <table class="table table-bordered table-hover" id="dataTable">
                             <thead>
                                 <tr>
                                     <th>#</th>

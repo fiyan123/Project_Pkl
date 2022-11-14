@@ -72,6 +72,8 @@
 <!-- OPTIONAL SCRIPTS -->
 <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('assets/dist/js/pages/dashboard3.js') }}"></script>
 <script>
 	$(document).ready(function() {
     $('#dataTable').DataTable();

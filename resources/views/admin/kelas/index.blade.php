@@ -15,52 +15,62 @@
                         <i class="nav-icon fas fa-user">&nbsp;+</i>
                     </button>
                 </div>
-                
-                <div class="card-header" align="center">
-                    <h5>Data Table Kelas</h5>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover" id="dataTable">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>KELAS</th>
-                                    <th>JURUSAN</th>
-                                    <th>AKSI</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($kelas as $data)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $data->kelas }}</td>
-                                        <td>{{ $data->jurusan }}</td>
-                                        <td>
-                                            <form action="{{ route('kelas.destroy', $data->id) }}" method="post">
-                                                @csrf
-                                                @method('delete')
-                                                <a href="{{ route('kelas.edit', $data->id) }}" class="btn btn-sm btn-outline-success">
-                                                    <i class="nav-icon fas fa-user"></i>
-                                                    Ubah
-                                                </a> |
-                                                <a href="{{ route('kelas.show', $data->id) }}" class="btn btn-sm btn-outline-info">
-                                                    <i class="nav-icon fas fa-eye"></i>
-                                                    Lihat
-                                                </a>
-                                                <button type="submit" class="btn btn-sm btn-outline-danger"
-                                                    onclick="return confirm('Hapus Data Ini?')">
-                                                    <i class="bi bi-trash"></i>
-                                                    Hapus
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                <div class="card-header">
+                    <div class="card-title">
+                      <h5>Data Table Kelas</h5>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                      <table id="dataTable" class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>KELAS</th>
+                              <th>JURUSAN</th>
+                              <th>AKSI</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach ($kelas as $data)
+                              <tr>
+                                  <td>{{ $loop->iteration }}</td>
+                                  <td>{{ $data->kelas }}</td>
+                                  <td>{{ $data->jurusan }}</td>
+                                  <td>
+                                      <form action="{{ route('kelas.destroy', $data->id) }}" method="post">
+                                          @csrf
+                                          @method('delete')
+                                          <a href="{{ route('kelas.edit', $data->id) }}" class="btn btn-sm btn-outline-success">
+                                              <i class="nav-icon fas fa-user"></i>
+                                              Ubah
+                                          </a> |
+                                          <a href="{{ route('kelas.show', $data->id) }}" class="btn btn-sm btn-outline-info">
+                                              <i class="nav-icon fas fa-eye"></i>
+                                              Lihat
+                                          </a>
+                                          <button type="submit" class="btn btn-sm btn-outline-danger"
+                                              onclick="return confirm('Hapus Data Ini?')">
+                                              <i class="bi bi-trash"></i>
+                                              Hapus
+                                          </button>
+                                      </form>
+                                  </td>
+                              </tr>
+                          @endforeach
+                      </tbody>
+                        <tfoot>
+                        <tr>
+                          <th>#</th>
+                          <th>Kelas</th>
+                          <th>Jurusan</th>
+                          <th>Aksi</th>
+                        </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
             </div>
         </div>
     </div>
