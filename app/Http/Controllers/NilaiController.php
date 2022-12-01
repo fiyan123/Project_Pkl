@@ -17,8 +17,8 @@ class NilaiController extends Controller
         $kelas = Kelas::all();
         $guru  = Guru::all();
         $siswa = Siswa::all();
+        
         return view('GuruUser.nilai.index', compact('nilai', 'kelas', 'guru', 'siswa'));
-
     }
 
     public function create()
@@ -29,24 +29,22 @@ class NilaiController extends Controller
         $guru  = Guru::all();
    
         return view('nilai.create', compact('kelas', 'siswa', 'guru', 'nilai'));
-
     }
 
     public function store(Request $request)
     {
         $validated = $request->validate([
-
-            'id_guru' => 'required',
-            'id_siswa' => 'required',
-            'id_kelas' => 'required',
+            'id_guru'         => 'required',
+            'id_siswa'        => 'required',
+            'id_kelas'        => 'required',
             'nilai_kehadiran' => 'required',
-            'nilai_harian' => 'required',
-            'pas' => 'required',
-            'pat' => 'required',
-
+            'nilai_harian'    => 'required',
+            'pas'             => 'required',
+            'pat'             => 'required',
         ]);
 
         $nilai = new Nilai();
+
         $nilai->id_guru = $request->id_guru;
         $nilai->id_siswa = $request->id_siswa;
         $nilai->id_kelas = $request->id_kelas;
@@ -55,7 +53,7 @@ class NilaiController extends Controller
         $nilai->pas = $request->pas;
         $nilai->pat = $request->pat;
         $nilai->raport = ($request->nilai_kehadiran + $request->nilai_harian + $request->pas + $request->pat) / 4;
-        // $nilai->raport = $raport;
+        
         if ($nilai->raport >= 90 && $nilai->raport <= 100) {
             $grade = "A";
         } elseif ($nilai->raport >= 80 && $nilai->raport <= 89) {
@@ -68,8 +66,8 @@ class NilaiController extends Controller
             $grade = "E";
         }
         $nilai->nilai_grade = $grade;
-
         $nilai->save();
+
         return redirect()->route('nilai.index')->with('success', 'Data berhasil ditambah!');
 
     }
@@ -77,6 +75,7 @@ class NilaiController extends Controller
     public function show($id)
     {
         $nilai = Nilai::findOrFail($id);
+        
         return view('GuruUser.nilai.show', compact('nilai'));
 
     }
@@ -87,25 +86,26 @@ class NilaiController extends Controller
         $siswa = Siswa::all();
         $kelas = Kelas::all();
         $guru = Guru::all();
-        return view('GuruUser.nilai.edit', compact('siswa', 'kelas', 'guru', 'nilai'));
 
+        return view('GuruUser.nilai.edit', compact('siswa', 'kelas', 'guru', 'nilai'));
     }
 
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
 
-            'id_guru' => 'required',
-            'id_siswa' => 'required',
-            'id_kelas' => 'required',
+            'id_guru'         => 'required',
+            'id_siswa'        => 'required',
+            'id_kelas'        => 'required',
             'nilai_kehadiran' => 'required',
-            'nilai_harian' => 'required',
-            'pas' => 'required',
-            'pat' => 'required',
+            'nilai_harian'    => 'required',
+            'pas'             => 'required',
+            'pat'             => 'required',
 
         ]);
 
         $nilai = Nilai::findOrFail($id);
+
         $nilai->id_kelas = $request->id_kelas;
         $nilai->id_siswa = $request->id_siswa;
         $nilai->id_guru = $request->id_guru;
@@ -115,6 +115,7 @@ class NilaiController extends Controller
         $nilai->pat = $request->pat;
         $raport = ($request->nilai_kehadiran + $request->nilai_harian + $request->pas + $request->pat) / 4;
         $nilai->raport = $raport;
+
         if ($nilai->raport >= 90 && $nilai->raport <= 100) {
             $grade = "A";
         } elseif ($nilai->raport >= 80 && $nilai->raport <= 89) {
@@ -127,8 +128,8 @@ class NilaiController extends Controller
             $grade = "E";
         }
         $nilai->nilai_grade = $grade;
-
         $nilai->save();
+        
         return redirect()->route('nilai.index')->with('success', 'Data berhasil diedit!');
 
     }
@@ -136,6 +137,7 @@ class NilaiController extends Controller
     public function destroy($id)
     {
         $nilai = Nilai::findOrFail($id);
+        
         $nilai->delete();
         return redirect()->route('nilai.index')->with('success', 'Data berhasil dihapus!');
 

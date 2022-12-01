@@ -1,18 +1,15 @@
-@extends('layouts.admin')
+@extends('layouts.mazer')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                @include('layouts/_flash')
-
+                <div class="page-heading">
+                    <h3>Data Dari Kelas {{ $kelas->kelas }}</h3>
+                </div>
                 <div class="card">
-                    <div class="card-header" align="center">
-                        Data Dari Kelas
-                    </div>
-
                     <div class="card-body">
-                        <form action="{{ route('kelas.update', $kelas->id) }}" method="post">
+                        <form action="{{ route('kelas.update', $kelas->id) }}" method="POST">
                             @csrf
                             @method('put')
                             <div class="mb-3">
@@ -36,12 +33,12 @@
                                     </span>
                                 @enderror
                             </div>
-    
+
                             <div class="mb-3">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit"><i class="bi bi-send-check-fill"></i>&nbsp;Simpan</button>
-                                    <a href="{{ route('kelas.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
-                                </div>
+                                <button class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    title="Simpan"><i class="bi bi-pen-fill"></i>&nbsp;</button>
+                                <a href="{{ route('kelas.index') }}" class="btn btn-dark" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Batal"><i class="bi bi-back"></i>&nbsp;</a>
                             </div>
                         </form>
                     </div>

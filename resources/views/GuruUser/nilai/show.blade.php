@@ -1,86 +1,81 @@
-@extends('layouts.admin')
+@extends('layouts.mazer')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
+                <div class="page-heading">
+                    <h3>Data Nilai {{ $nilai->siswa->nama }}, Kelas {{ $nilai->kelas->kelas }}</h3>
+                </div>
                 <div class="card">
-                    <div class="card-header mb-2" align="center">
-                        Hasil Data Nilai Siswa
-                    </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label">NIP GURU</label>
+                            <label class="form-label">Nip Guru</label>
                             <input type="number" class="form-control" name="id_guru" value="{{ $nilai->guru->nip }}"
                                 readonly>
+                        </div>
 
-                        </div>
                         <div class="mb-3">
-                            <label class="form-label">NISN</label>
-                            <input type="number" class="form-control" name="id_siswa" value="{{ $nilai->siswa->nis }}" readonly>
+                            <label class="form-label">Nisn</label>
+                            <input type="number" class="form-control" name="id_siswa" value="{{ $nilai->siswa->nis }}"
+                                readonly>
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label">NAMA</label>
-                            <input type="text" class="form-control" name="id_siswa" value="{{ $nilai->siswa->nama }}" readonly>
+                            <label class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="id_siswa" value="{{ $nilai->siswa->nama }}"
+                                readonly>
                         </div>
-                        
+
                         <div class="mb-3">
-                            <label class="form-label">KELAS</label>
+                            <label class="form-label">Kelas</label>
                             <input type="text" class="form-control" name="id_kelas" value="{{ $nilai->kelas->kelas }}"
                                 readonly>
-
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label">JURUSAN</label>
+                            <label class="form-label">Jurusan</label>
                             <input type="text" class="form-control" name="id_kelas" value="{{ $nilai->kelas->jurusan }}"
                                 readonly>
                         </div>
 
-                         <div align="center"><h5>DATA NILAI SISWA</h5></div>
-                       
-
-                        <div class="mb-3">
-                            <label class="form-label">NILAI KEHADIRAN</label>
-                            <input type="number" class="form-control" name="nilai_kehadiran" value="{{ $nilai->nilai_kehadiran }}"
-                                readonly>
+                        <div class="mb-5">
+                            <label class="form-label">Nilai Kehadiran</label>
+                            <input type="number" class="form-control" name="nilai_kehadiran"
+                                value="{{ $nilai->nilai_kehadiran }}" readonly>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">NILAI HARIAN</label>
-                            <input type="number" class="form-control" name="nilai_harian" value="{{ $nilai->nilai_harian }}"
-                                readonly>
+                            <label class="form-label">Nilai Harian</label>
+                            <input type="number" class="form-control" name="nilai_harian"
+                                value="{{ $nilai->nilai_harian }}" readonly>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">NILAI PAS</label>
-                            <input type="number" class="form-control" name="pas" value="{{ $nilai->pas }}"
-                                readonly>
+                            <label class="form-label">Nilai Pas</label>
+                            <input type="number" class="form-control" name="pas" value="{{ $nilai->pas }}" readonly>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">NILAI PAT</label>
-                            <input type="number" class="form-control" name="pat" value="{{ $nilai->pat }}"
-                                readonly>
+                            <label class="form-label">Nilai Pat</label>
+                            <input type="number" class="form-control" name="pat" value="{{ $nilai->pat }}" readonly>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">NILAI RAPORT</label>
-                            <input type="number" class="form-control" name="raport" value="{{ $nilai->raport }}"
-                                readonly>
+                            <label class="form-label">Nilai Raport</label>
+                            <input type="number" class="form-control" name="raport" value="{{ $nilai->raport }}" readonly>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">GRADE</label>
+                            <label class="form-label">Grade Nilai</label>
                             <input type="text" class="form-control" name="nilai_grade" value="{{ $nilai->nilai_grade }}"
                                 readonly>
                         </div>
 
                         <div class="mb-3">
-                            <div class="d-grid gap-2">
-                                <a href="{{ route('nilai.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
-                            </div>
+                            <a href="{{ route('nilai.index') }}" class="btn btn-dark" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Kembali"><i class="bi bi-back"></i>&nbsp;</a>
                         </div>
-
                         </form>
                     </div>
                 </div>

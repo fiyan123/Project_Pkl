@@ -27,18 +27,20 @@ class SiswaController extends Controller
         {
             //validasi
             $validated = $request->validate([
-                'nis' => 'required|unique:siswas',
-                'nama' => 'required',
+                'nis'           => 'required|unique:siswas',
+                'nama'          => 'required',
                 'jenis_kelamin' => 'required',
-                'id_kelas' => 'required',
+                'id_kelas'      => 'required',
             ]);
 
             $siswa = new Siswa();
+
             $siswa->nis = $request->nis;
             $siswa->nama = $request->nama;
             $siswa->jenis_kelamin = $request->jenis_kelamin;
             $siswa->id_kelas = $request->id_kelas;
             $siswa->save();
+
             return redirect()->route('siswa.index')->with('success', 'Data berhasil ditambah!');
         }
 
@@ -53,6 +55,7 @@ class SiswaController extends Controller
         {
             $siswa = Siswa::findOrFail($id);
             $kelas = Kelas::all();
+
             return view('admin.siswa.edit', compact('siswa', 'kelas'));
         }
 
@@ -60,17 +63,20 @@ class SiswaController extends Controller
         {
             // Validasi
             $validated = $request->validate([
-                'nis' => 'required',
-                'nama' => 'required',
+                'nis'           => 'required',
+                'nama'          => 'required',
                 'jenis_kelamin' => 'required',
-                'id_kelas' => 'required',
+                'id_kelas'      => 'required',
             ]);
+
             $siswa = Siswa::findOrFail($id);
+
             $siswa->nis = $request->nis;
             $siswa->nama = $request->nama;
             $siswa->jenis_kelamin = $request->jenis_kelamin;
             $siswa->id_kelas = $request->id_kelas;
             $siswa->save();
+            
             return redirect()->route('siswa.index')
                 ->with('success', 'Data berhasil diedit!');
         }
@@ -78,6 +84,7 @@ class SiswaController extends Controller
         public function destroy($id)
         {
             $siswa = Siswa::findOrFail($id);
+
             $siswa->delete();
             return redirect()->route('siswa.index')
                 ->with('success', 'Data berhasil dihapus!');

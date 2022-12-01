@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KelasController extends Controller
 {
@@ -25,21 +26,24 @@ class KelasController extends Controller
     {
         //validasi
         $validated = $request->validate([
-            'kelas' => 'required',
+            'kelas'   => 'required',
             'jurusan' => 'required',
         ]);
-
+        
         $kelas = new Kelas();
-        $kelas->kelas = $request->kelas;
+        
+        $kelas->kelas   = $request->kelas;
         $kelas->jurusan = $request->jurusan;
         $kelas->save();
+
         return redirect()->route('kelas.index')
-            ->with('success', 'Data berhasil dibuat!');
+            ->with('success', 'Data Berhasil Ditambah!');
     }
 
     public function show($id)
     {
         $kelas = Kelas::findOrFail($id);
+
         return view('admin.kelas.show', compact('kelas'));
     }
 
@@ -47,6 +51,7 @@ class KelasController extends Controller
     public function edit($id)
     {
         $kelas = Kelas::findOrFail($id);
+
         return view('admin.kelas.edit', compact('kelas'));
     }
 
@@ -54,24 +59,28 @@ class KelasController extends Controller
     {
         // Validasi
         $validated = $request->validate([
-            'kelas' => 'required',
+            'kelas'   => 'required',
             'jurusan' => 'required',
 
         ]);
 
         $kelas = Kelas::findOrFail($id);
+
         $kelas->kelas = $request->kelas;
         $kelas->jurusan = $request->jurusan;
         $kelas->save();
+        
         return redirect()->route('kelas.index')
-            ->with('success', 'Data berhasil diedit!');
+            ->with('success', 'Data Berhasil Diedit!');
     }
 
     public function destroy($id)
     {
         $kelas = Kelas::findOrFail($id);
+        
         $kelas->delete();
         return redirect()->route('kelas.index')
-            ->with('success', 'Data berhasil dihapus!');
+            ->with('success', 'Data Berhasil Dihapus!');
     }
 }
+// composer require realrashid/sweet-alert

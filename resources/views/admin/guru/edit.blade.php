@@ -1,20 +1,19 @@
-@extends('layouts.admin')
+@extends('layouts.mazer')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                @include('layouts/_flash')
+                <div class="page-heading">
+                    <h3>Data Dari Guru {{ $guru->nama }}</h3>
+                </div>
                 <div class="card">
-                    <div class="card-header" align="center">
-                        Data Dari Guru
-                    </div>
                     <div class="card-body">
                         <form action="{{ route('guru.update', $guru->id) }}" method="post">
                             @csrf
                             @method('put')
                             <div class="mb-3">
-                                <label class="form-label">NIP</label>
+                                <label class="form-label">Nip</label>
                                 <input type="number" class="form-control  @error('nip') is-invalid @enderror"
                                     name="nip" value="{{ $guru->nip }}">
                                 @error('nip')
@@ -24,7 +23,7 @@
                                 @enderror
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">NAMA</label>
+                                <label class="form-label">Nama</label>
                                 <input type="text" class="form-control  @error('nama') is-invalid @enderror"
                                     name="nama" value="{{ $guru->nama }}">
                                 @error('nama')
@@ -33,8 +32,20 @@
                                     </span>
                                 @enderror
                             </div>
+
                             <div class="mb-3">
-                                <label class="form-label">JENIS KELAMIN</label>
+                                <label class="form-label">Mata Pelajaran</label>
+                                <input type="text" class="form-control  @error('mata_pelajaran') is-invalid @enderror"
+                                    name="mata_pelajaran" value="{{ $guru->mata_pelajaran }}">
+                                @error('mata_pelajaran')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Jenis Kelamin</label>
                                 <div class="form-check">
                                     <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror"
                                         type="radio" name="jenis_kelamin" value="Laki-laki"
@@ -57,22 +68,12 @@
                                     </span>
                                 @enderror
                             </div>
+
                             <div class="mb-3">
-                                <label class="form-label">MATA PELAJARAN</label>
-                                <input type="text" class="form-control  @error('mata_pelajaran') is-invalid @enderror"
-                                    name="mata_pelajaran" value="{{ $guru->mata_pelajaran }}">
-                                @error('mata_pelajaran')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                           
-                            <div class="mb-3">
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="submit"><i class="bi bi-send-check-fill"></i>&nbsp;Simpan</button>
-                                    <a href="{{ route('guru.index') }}" class="btn btn-dark"><i class="bi bi-back"></i>&nbsp;Kembali</a>
-                                </div>
+                                <button class="btn btn-primary" type="submit" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Simpan"><i class="bi bi-pen-fill"></i>&nbsp;</button>
+                                <a href="{{ route('guru.index') }}" class="btn btn-dark"data-bs-toggle="tooltip"
+                                    data-bs-placement="top" title="Batal"><i class="bi bi-back"></i>&nbsp;</a>
                             </div>
                         </form>
                     </div>

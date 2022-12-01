@@ -1,266 +1,269 @@
-@extends('layouts.admin')
+@extends('layouts.mazer')
 @section('content')
-
-    <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard v3</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v3</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-
-    <!-- Main content -->
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                        <h3 class="card-title">Online Store Visitors</h3>
-                        <a href="javascript:void(0);">View Report</a>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <span class="sr-only">Loading...</span>
+        <img src="{{ asset('assetsm/vendors/svg-loaders/audio.svg') }}" class="me-4" style="width: 3rem" alt="audio">
+    </div>
+    <div class="page-heading">
+        <h3>Penilaian Siswa Dashboard</h3>
+    </div>
+    <div class="page-content">
+        <section class="row">
+            <div class="col-12 col-lg-9">
+                <div class="row">
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                        <div class="stats-icon purple mb-2">
+                                            <i class="iconly-boldShow"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">Profile Views</h6>
+                                        <h6 class="font-extrabold mb-0">112.000</h6>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                        <div class="stats-icon blue mb-2">
+                                            <i class="iconly-boldProfile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">Followers</h6>
+                                        <h6 class="font-extrabold mb-0">183.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                        <div class="stats-icon green mb-2">
+                                            <i class="iconly-boldAdd-User"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">Following</h6>
+                                        <h6 class="font-extrabold mb-0">80.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                        <div class="stats-icon red mb-2">
+                                            <i class="iconly-boldBookmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">Saved Post</h6>
+                                        <h6 class="font-extrabold mb-0">112</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Profile Visit</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart-profile-visit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Profile Visit</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center">
+                                            <svg class="bi text-primary" width="32" height="32" fill="blue"
+                                                style="width:10px">
+                                                <use xlink:href="assets/images/bootstrap-icons.svg#circle-fill" />
+                                            </svg>
+                                            <h5 class="mb-0 ms-3">Europe</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="mb-0">862</h5>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="chart-europe"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center">
+                                            <svg class="bi text-success" width="32" height="32" fill="blue"
+                                                style="width:10px">
+                                                <use xlink:href="assets/images/bootstrap-icons.svg#circle-fill" />
+                                            </svg>
+                                            <h5 class="mb-0 ms-3">America</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="mb-0">375</h5>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="chart-america"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center">
+                                            <svg class="bi text-danger" width="32" height="32" fill="blue"
+                                                style="width:10px">
+                                                <use xlink:href="assets/images/bootstrap-icons.svg#circle-fill" />
+                                            </svg>
+                                            <h5 class="mb-0 ms-3">Indonesia</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="mb-0">1025</h5>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="chart-indonesia"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Latest Comments</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-lg">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="col-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar avatar-md">
+                                                            <img src="{{ asset('assetsm/images/faces/5.jpg') }}">
+                                                        </div>
+                                                        <p class="font-bold ms-3 mb-0">Si Cantik</p>
+                                                    </div>
+                                                </td>
+                                                <td class="col-auto">
+                                                    <p class=" mb-0">Congratulations on your graduation!</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar avatar-md">
+                                                            <img src="{{ asset('assetsm/images/faces/2.jpg') }}">
+                                                        </div>
+                                                        <p class="font-bold ms-3 mb-0">Si Ganteng</p>
+                                                    </div>
+                                                </td>
+                                                <td class="col-auto">
+                                                    <p class=" mb-0">Wow amazing design! Can you make another tutorial for
+                                                        this design?</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="card">
+                    <div class="card-body py-4 px-4">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar avatar-xl">
+                                <img src="{{ asset('assetsm/images/faces/1.jpg') }}" alt="Face 1">
+                            </div>
+                            <div class="ms-3 name">
+                                <h6 class="font-bold">{{ Auth::user()->name }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Recent Messages</h4>
+                    </div>
+                    <div class="card-content pb-4">
+                        <div class="recent-message d-flex px-4 py-3">
+                            <div class="avatar avatar-lg">
+                                <img src="{{ asset('assetsm/images/faces/4.jpg') }}">
+                            </div>
+                            <div class="name ms-4">
+                                <h5 class="mb-1">Hank Schrader</h5>
+                                <h6 class="text-muted mb-0">@johnducky</h6>
+                            </div>
+                        </div>
+                        <div class="recent-message d-flex px-4 py-3">
+                            <div class="avatar avatar-lg">
+                                <img src="{{ asset('assetsm/images/faces/5.jpg') }}">
+                            </div>
+                            <div class="name ms-4">
+                                <h5 class="mb-1">Dean Winchester</h5>
+                                <h6 class="text-muted mb-0">@imdean</h6>
+                            </div>
+                        </div>
+                        <div class="recent-message d-flex px-4 py-3">
+                            <div class="avatar avatar-lg">
+                                <img src="{{ asset('assetsm/images/faces/1.jpg') }}">
+                            </div>
+                            <div class="name ms-4">
+                                <h5 class="mb-1">John Dodol</h5>
+                                <h6 class="text-muted mb-0">@dodoljohn</h6>
+                            </div>
+                        </div>
+                        <div class="px-4">
+                            <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Start
+                                Conversation</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Visitors Profile</h4>
                     </div>
                     <div class="card-body">
-                        <div class="d-flex">
-                        <p class="d-flex flex-column">
-                            <span class="text-bold text-lg">820</span>
-                            <span>Visitors Over Time</span>
-                        </p>
-                        <p class="ml-auto d-flex flex-column text-right">
-                            <span class="text-success">
-                            <i class="fas fa-arrow-up"></i> 12.5%
-                            </span>
-                            <span class="text-muted">Since last week</span>
-                        </p>
-                        </div>
-                        <!-- /.d-flex -->
-
-                        <div class="position-relative mb-4">
-                        <canvas id="visitors-chart" height="200"></canvas>
-                        </div>
-
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> This Week
-                            </span>
-
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Last Week
-                            </span>
-                        </div>
+                        <div id="chart-visitors-profile"></div>
                     </div>
-                </div>
-                <!-- /.card -->
-
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h3 class="card-title">Products</h3>
-                        <div class="card-tools">
-                        <a href="#" class="btn btn-tool btn-sm">
-                            <i class="fas fa-download"></i>
-                        </a>
-                        <a href="#" class="btn btn-tool btn-sm">
-                            <i class="fas fa-bars"></i>
-                        </a>
-                        </div>
-                    </div>
-                    <div class="card-body table-responsive p-0">
-                        <table class="table table-striped table-valign-middle">
-                        <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Sales</th>
-                            <th>More</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                            <img src="{{ asset('assets/dist/img/default-150x150.png') }}" alt="Product 1" class="img-circle img-size-32 mr-2">
-                            Some Product
-                            </td>
-                            <td>$13 USD</td>
-                            <td>
-                            <small class="text-success mr-1">
-                                <i class="fas fa-arrow-up"></i>
-                                12%
-                            </small>
-                            12,000 Sold
-                            </td>
-                            <td>
-                            <a href="#" class="text-muted">
-                                <i class="fas fa-search"></i>
-                            </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <img src="{{ asset('assets/dist/img/default-150x150.png') }}" alt="Product 1" class="img-circle img-size-32 mr-2">
-                            Another Product
-                            </td>
-                            <td>$29 USD</td>
-                            <td>
-                            <small class="text-warning mr-1">
-                                <i class="fas fa-arrow-down"></i>
-                                0.5%
-                            </small>
-                            123,234 Sold
-                            </td>
-                            <td>
-                            <a href="#" class="text-muted">
-                                <i class="fas fa-search"></i>
-                            </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <img src="{{ asset('assets/dist/img/default-150x150.png') }}" alt="Product 1" class="img-circle img-size-32 mr-2">
-                            Amazing Product
-                            </td>
-                            <td>$1,230 USD</td>
-                            <td>
-                            <small class="text-danger mr-1">
-                                <i class="fas fa-arrow-down"></i>
-                                3%
-                            </small>
-                            198 Sold
-                            </td>
-                            <td>
-                            <a href="#" class="text-muted">
-                                <i class="fas fa-search"></i>
-                            </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <img alt="Product" class="img-circle img-size-32 mr-2">
-                            Perfect Item
-                            <span class="badge bg-danger">NEW</span>
-                            </td>
-                            <td>$199 USD</td>
-                            <td>
-                            <small class="text-success mr-1">
-                                <i class="fas fa-arrow-up"></i>
-                                63%
-                            </small>
-                            87 Sold
-                            </td>
-                            <td>
-                            <a href="#" class="text-muted">
-                                <i class="fas fa-search"></i>
-                            </a>
-                            </td>
-                        </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- /.col-md-6 -->
-            <div class="col-lg-6">
-                <div class="card">
-                <div class="card-header border-0">
-                    <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Sales</h3>
-                    <a href="javascript:void(0);">View Report</a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex">
-                    <p class="d-flex flex-column">
-                        <span class="text-bold text-lg">$18,230.00</span>
-                        <span>Sales Over Time</span>
-                    </p>
-                    <p class="ml-auto d-flex flex-column text-right">
-                        <span class="text-success">
-                        <i class="fas fa-arrow-up"></i> 33.1%
-                        </span>
-                        <span class="text-muted">Since last month</span>
-                    </p>
-                    </div>
-                    <!-- /.d-flex -->
-
-                    <div class="position-relative mb-4">
-                    <canvas id="sales-chart" height="200"></canvas>
-                    </div>
-
-                    <div class="d-flex flex-row justify-content-end">
-                    <span class="mr-2">
-                        <i class="fas fa-square text-primary"></i> This year
-                    </span>
-
-                    <span>
-                        <i class="fas fa-square text-gray"></i> Last year
-                    </span>
-                    </div>
-                </div>
-                </div>
-                <!-- /.card -->
-
-                <div class="card">
-                <div class="card-header border-0">
-                    <h3 class="card-title">Online Store Overview</h3>
-                    <div class="card-tools">
-                    <a href="#" class="btn btn-sm btn-tool">
-                        <i class="fas fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-tool">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                    <p class="text-success text-xl">
-                        <i class="ion ion-ios-refresh-empty"></i>
-                    </p>
-                    <p class="d-flex flex-column text-right">
-                        <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-success"></i> 12%
-                        </span>
-                        <span class="text-muted">CONVERSION RATE</span>
-                    </p>
-                    </div>
-                    <!-- /.d-flex -->
-                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                    <p class="text-warning text-xl">
-                        <i class="ion ion-ios-cart-outline"></i>
-                    </p>
-                    <p class="d-flex flex-column text-right">
-                        <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                        </span>
-                        <span class="text-muted">SALES RATE</span>
-                    </p>
-                    </div>
-                    <!-- /.d-flex -->
-                    <div class="d-flex justify-content-between align-items-center mb-0">
-                    <p class="text-danger text-xl">
-                        <i class="ion ion-ios-people-outline"></i>
-                    </p>
-                    <p class="d-flex flex-column text-right">
-                        <span class="font-weight-bold">
-                        <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                        </span>
-                        <span class="text-muted">REGISTRATION RATE</span>
-                    </p>
-                    </div>
-                    <!-- /.d-flex -->
-                </div>
                 </div>
             </div>
-            <!-- /.col-md-6 -->
-            </div>
-            <!-- /.row -->
-        </div>
-      <!-- /.container-fluid -->
+        </section>
+    </div>
 @endsection

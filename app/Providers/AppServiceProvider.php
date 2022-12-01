@@ -13,15 +13,17 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
     
     public function boot()
     {
         Paginator::useBootstrap();
 
         Gate::define('admin' , function(User $user){
-            // return $user->name === 'Admin Sekolah';
             return $user->is_admin;
+        });
+
+        Gate::define('guru' , function(User $user){
+            return $user->is_guru;
         });
     }
 }
